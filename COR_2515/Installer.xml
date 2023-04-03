@@ -1,0 +1,573 @@
+<xml vrsion = "1.0" ?>
+<InstallTree>
+   <Feature Name="MilDevelopment">
+      <Feature Name="MilDEV_contexts">
+         <Component Name="MilDEV_contexts" Destination="[INSTALLDIR]Contexts">
+			<File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
+		 </Component>
+	  </Feature>
+   
+   
+      <Feature Name="DriversFiles">
+         <Feature Name="BoardSpecific_Full">
+	        <Component Name="BoardSpecificFull" Destination="[INSTALLDIR]MIL\\Examples\\BoardSpecific">
+	           <File Source="[PATH_TO_CDBUILDER_FILES]mil\examples\mil.c++\boardspecific\Full" />
+	     </Feature>
+	     <Feature Name="BoardSpecific_Lite">
+	        <Component Name="AllBoardSpecific" Destination="[INSTALLDIR]MIL\\Examples\\BoardSpecific">
+	           <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++\\boardspecific\\General" />
+	        </Component>
+	     </Feature>
+     
+	     <Feature Name="CommunGigEFiles">
+	        <Component Name="" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn">
+	           <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\GVCP_Status_Codes.h" />
+	        </Component>
+	     </Feature>
+         <Feature Name="DMILFiles">
+	        <Feature Name="DMILExamplesFull">
+	           <Component Name="DMILExamplesFull" Destination="[INSTALLDIR]MIL\\Examples\\DistributedMIL">
+	              <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++]\distributedmil\\full"/>
+	           </Component>
+		    </Feature>
+		    <Feature Name="DMILExamplesGeneral">
+		       <Component Name="DisplayMonitoringDotNet" Destination="[INSTALLDIR]MIL\\Examples\\DistributedMIL\\DMILDisplayMonitoring\\C#">
+		          <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
+		       </Component>
+		       <Component Name="DMILExamplesGeneral" Destination="[INSTALLDIR]MIL\\Examples\\DistributedMIL">
+		          <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL" />
+		       </Component>
+		    </Feature>	
+	     </Feature>
+	     
+		 
+	  </Feature>
+
+      <Feature Name="MilDEV_Examples">
+         <Feature Name="Examples_schema">
+	        <Component Name="Examples_schema" Destination="[INSTALLDIR]MIL\\Examples\\.schema">
+	  	       <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\.schema\\example.xsd" />
+	  	     </Component>
+	     </Feature>
+    	 <Feature Name="MilDEV_Examples_M_VC_Full">
+    	    <Component Name="MilCopilot_CoreFull" Destination="[INSTALLDIR]MIL\\Examples\\Core\\Full">
+    		   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MilCopilot\\Core\\Full" />
+    		</Component>
+    		<Component Name="MilCopilot_Full" Destination="[INSTALLDIR]MIL\Examples\Full">
+    		   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MilCopilot\\full" />
+    		</Component>
+    		<Component Name="MilCopilot_General" Destination="[INSTALLDIR]MIL\Examples\General">
+    		   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MilCopilot\\general" />
+    		</Component>
+    		<Component Name="MilDev_Examples_Core_Full" Destination="[INSTALLDIR]MIL\\Examples\\Core\\Full">
+    		   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.C++\\Core\\full" />
+    		</Component>
+    		<Component Name="MilDEV_Examples_M_VC_Full" Destination="[INSTALLDIR]MIL\\Examples\\Full">
+    		   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++\\full" />
+    		</Component>
+    	  </Feature>
+	     <Feature Name="MilDEV_Examples_M_VC_General">
+	        <Component Name="MilDev_Examples_Core_General" Destination="[INSTALLDIR]MIL\\Examples\\Core">
+		       <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.C++\\Core\\general" />
+		    </Component>
+		    <Component Name="MilDEV_Examples_M_VC_General" Destination="[INSTALLDIR]MIL\\Examples\\General">
+		       <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++\\general" />
+		    </Component>
+	     </Feature>
+	     <Feature Name="Processing_M_VC">
+	        <Component Name="MilCopilot_Processing" Destination="[INSTALLDIR]MIL\\Examples\\Processing">
+		       <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MilCopilot\\processing" />
+		    </Component>
+		    <Component Name="Processing_M_VC" Destination="[INSTALLDIR]MIL\\Examples\\Processing">
+		       <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++\\processing"  />
+		    </Component>
+	     </Feature>
+	     <Feature Name="MilDEV_Examples_IndustrialICom">
+	        <Component Name="Examples_PLC" Destination="[INSTALLDIR]MIL\\Examples\\IndustrialCommunication\\PLC">
+		       <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.C++\\IndustrialCommunication\\PLC" />
+		    </Component>
+		    <Component Name="Examples_Robots" Destination="[INSTALLDIR]MIL\\Examples\\IndustrialCommunication\\Robots">
+		       <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.C++\\IndustrialCommunication\\Robots" />
+		    </Component>
+	     </Feature> 
+      </Feature>
+   
+	  <Feature Name="MilDEV_Include">
+	     <Feature Name="MilDEV_Include_Full">
+			<Component Name="MIDev_Include_class_sub" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn\\Sub">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\sub">
+			</Component>
+			<Component Name="MilDEV_Include_Full" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dblob.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dim.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dmap.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dmet.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dmod.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dreg.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milagm.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milbead.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milblob.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milcal.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milclass.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milcode.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milcolor.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mildmr.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\miledge.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milmeas.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milmetrol.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milmod.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milocr.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milpat.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milreg.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milstr.h;" />
+			</Component>
+		 </Feature>
+	     <Feature Name="MilDEV_Include_Lite">
+		    <Component Name="MilDEV_Include_Lite" Destination="[INSTALLDIR]MIL\\Include">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\mil.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\Milerr.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\MilFunctionCode.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\milweb.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\o.h;" />
+			</Component>
+			<Component Name="MILDev_Include_lite_sub" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn\\Sub">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\Sub\\milim_ascii.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\Sub\\milim_safetype.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\Sub\\milim_string.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\Sub\\milim_uniqueid.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\Sub\\milim_vector.h;" />
+			</Component>
+			<Component Name="MilDEV_Include_Milim" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3ddisp.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dgeo.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dgra.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milim.h;" />
+			</Component>
+			<Component Name="MilDEV_LIB_Lite_Classic" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mbasictypes.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mildec.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milerror.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milfunc.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milfuncll.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milos.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milproto.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milsetup.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milstring.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\miluniqueid.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milvectdor.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milwarning.h;" />
+			</Component>
+			<Component Name="MilDEV_LIB_Lite_Classic_Dyn" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mildisplay.h;" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\PFNC.h;" />
+			</Component>
+			<Component Name="MILOOInclude" Destination="[INSTALLDIR]MIL\\Include\\ObjectMIL">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\objectMIL" />
+			</Component>
+		 </Feature>
+		 <Feature Name="MILFPGA_H">
+		    <Component Name="milfpga.h" Destination="[INSTALLDIR]MIL\\Include">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\milfpga.h" />
+			</Component>
+		 </Feature>
+		    
+	     <Feature Name="MILCOMHEADER">
+		    <Component Name="milcom.h" Destination="[INSTALLDIR]MIL\Include\ClassicMIL\MILDyn">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milcom.h" />
+			</Component>
+	     </Feature>
+      </Feature>
+	  <Feature Name="MilDEV_LIB">
+	     <Feature Name="MilDEV_LIB_Full">
+		    <Component Name="MilDEV_LIB_Full" Destination="[INSTALLDIR]MIL\\LIB">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3dblob.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3dim.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3dmap.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3dmet.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3dmod.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3dreg.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milagm.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milbead.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milblob.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milcal.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milclass.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milcode.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milcolor.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mildmr.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\miledge.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milmeas.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milmetrol.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milmod.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milocr.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milpat.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milreg.lib" />
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milstr.lib" />			   
+			</Component>
+		 </Feature>
+		 <Feature Name="MilDEV_LIB_Lite">
+		    <Feature Name="MILFPGA_LIB">
+			   <Component Name="milfpga.lib" Destination="[INSTALLDIR]MIL\\LIB">
+			      <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milfpga.lib" />			   
+			   </Component>
+			</Feature>
+			<Component Name="MilDEV_LIB_Lite" Destination="[INSTALLDIR]MIL\\LIB">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil.lib" />			   
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3d.lib" />			   
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milim.lib" />			   
+			</Component>
+		 </Feature>
+		 <Feature Name="MILCOMLIB">
+		    <Component Name="milcom.lib" Destination="[INSTALLDIR]MIL\\LIB">
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milcom.lib" />			   
+			</Component>
+		 </Feature>
+		 <Component Name="milwebclient.lib" Destination="[INSTALLDIR]MIL\\LIB">
+			<File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milwebclient.lib" />			   
+	     </Component>
+	  </Feature>
+	  <Feature Name="MilDEV_DOC">
+	     <Feature Name="MilDEV_HtmlHelp">
+		    <Component Name="HtmlHelp.chm" Destination="[INSTALLDIR]MIL\\DOC\\mil_help" >
+			   <File Source="[PATH_TO_CDBUILDER_FILES]mil\\doc\\help\\html" />
+			</Component>
+			<Component Name="mtxhttpserver.exe" Destination="[INSTALLDIR]Tools" >
+			   <File Source="[PATH_TO_CDBUILDER_FILES]tools\\mtxhttpServer\\mtxhttpserver.exe" />
+			</Component>
+			<Component Name="mtxhttpserver.sif" Destination="[INSTALLDIR]Drivers\\Install" >
+			   <File Source="[PATH_TO_CDBUILDER_FILES]tools\\mtxhttpServer\\mtxhttpserver.sif" />
+			</Component>
+		 </Feature>
+	  </Feature>
+	  <Feature Name="VisualStudioAddOn">
+	  </Feature>
+   </Feature>
+   <Feature Name="MilRuntime">
+      <Feature Name="MilRT_Display">
+	     <Component Name=""
+	  </Feature>
+   </Feature>
+	  =======================================
+		 
+		 
+   <Feature Name="MIL.NET">
+      <Feature Name="Processing_M_NET">
+	     <Component Name="Processing_M_NET" Destination="[INSTALLDIR]MIL\\Examples\\Processing">
+		    <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.net\\processing" /> 
+		 </Component>
+	  </Feature>
+      <Feature Name="MilDEV_Examples_M_NET">
+	     <Feature Name="MilDEV_Examples_M_NET_Full">
+		    <Component Name="MilDEV_Examples_M_NET_Full" Destination="[INSTALLDIR]MIL\\Examples\\Full">
+		       <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.net\\full" /> 
+		    </Component>
+			<Component Name="MilDEV_Examples_NET_Core_Full" Destination="[INSTALLDIR]MIL\\Examples\\Core\\Full">
+		       <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.net\\core\\full" /> 
+		    </Component>
+		 </Feature>
+		 <Feature Name="MilDEV_Examples_M_NET_General">
+		    <Component Name="MilDEV_Examples_M_NET_General" Destination="[INSTALLDIR]MIL\\Examples\\General">
+		       <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.net\\general" /> 
+		    </Component>
+			<Component Name="MilDEV_Examples_NET_Core_General" Destination="[INSTALLDIR]MIL\\Examples\\Core">
+		       <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.net\\core\\general" /> 
+		    </Component>
+		 </Feature>
+	  </Feature>
+   </Feature>
+   MilDEV_Examples_M_NET
+	  MilDEV_Examples_M_NET_Full
+	     MilDEV_Examples_M_NET_Full
+		 MilDEV_Examples_NET_Core_Full
+	  MilDEV_Examples_M_NET_General
+		 MilDEV_Examples_M_NET_General
+	
+MilRuntime
+  MilRT_Display
+	 MilRT_Display
+  MilRT_DLL
+	 MilRT_DLL_Full
+		BasicTrainingTools
+		CNN_Engine
+		MilRT_DLL_Full
+	 MilRT_DLL_Lite
+		MilRT_DLL_Lite
+  MilRT_Tools
+	 MilRT_Tools_Lite
+		CommonInstallTools
+		ErrorWarningTxt
+		MilRT_Tools_Lite
+		MilUseQuery
+		opengl32.dll
+		uninstallhelper.exe
+  MILRT_DotNet	
+	 MilInterpCSharp.dll
+	 MilInterpVBNet.dll
+	 MilInterPythonXX.dll
+	 MILNET_NuGet
+	 MILRT_MIL.NET
+	 NewPythonDIST
+  MIL_EULA_LITE
+	 MIL_EULA_LITE
+  MIL_EULA_FULL
+	 MIL_EULA_FULL
+  copyrights.lst
+  Corei7MPThresholds
+  LicenseServerFiles
+  Localclient.sif
+  MESRNFILE
+  milhttpwebserver.dll
+  MilLicenseServerAdmin
+  milwebdll
+  milwebjs
+  Revision
+  SetupType
+DMil
+  DMilDLL
+  DMilEXE
+Drivers
+   MILFPGA_DLL
+ 	 MILFPGA_DLL
+   DriversTools
+ 	 BoardInfo
+ 		BoardInfo
+ 	 ClarityUHDTools
+ 		ClarityUHDTools
+ 	 FirmwareUpdater
+ 		FirmwareUpdater
+ 		Matrox.MatroxImagingLibrary.dll
+ 	 MilPerf	
+ 		MilPerf
+ 		MilPerfDLL
+ 		MilPerfEXE
+ 	 RapixoCXPTools
+ 		RapixoCXPTools
+ 	 Gecho
+ 		Gecho.exe
+ 	 MorphisTools
+ 		MorphisBench
+ 	 RadientCXPTools
+ 		RadientCXPBench
+ 	 RadientEVCLTools
+ 		EVCLBench
+ 	 RapixoCLTools
+ 		RapixoCLBench
+ 	 SoliosTools
+ 		SoliosBench
+ 	 usb3visionTools
+ 		USB3VisionDiag
+   GenTLProducer
+ 	 ProducerFiles
+   MilGenTLComponents
+ 	 GenTL_dcf
+ 	 MilGenTLdll
+ 	 MilGenTLUIdll
+   GPU
+ 	 GPUComp
+ 	 GPUDLL
+   ClarityUHD
+ 	 ClarityUHDCfg
+ 	 ClarityUHDDCF
+ 	 ClarityUHDDLL
+ 	 ClarityUHDEdid
+ 	 ClarityUHDSys
+ 	 firmware
+   Indio
+ 	 Indio.cfg
+ 	 milaux.dll
+ 	 MtxAuxFST
+ 	 mtxauxSyS
+   IrisGTR
+ 	 IrisGTRCfg
+ 	 IrisGTRDCF
+ 	 IrisGTRDLL
+ 	 IrisGTRFirmware
+ 	 IrisGTRSys
+   IrisGTX
+ 	 IrisGTXCfg
+ 	 IrisGTXDCF
+ 	 IrisGTXDLL
+ 	 IrisGTXFirmware
+ 	 IrisGTXSys
+   Nexis2
+ 	 Nexis2Cfg
+ 	 Nexis2DCF
+ 	 Nexis2DLL
+ 	 Nexis2Firmware
+ 	 Nexis2Sys
+   Nexis3
+ 	 Nexis3Cfg
+ 	 Nexis3DCF
+ 	 Nexis3DLL
+ 	 Nexis3Firmware
+ 	 Nexis3Sys
+   RadientCXP
+ 	 RadientCXPCfg
+ 	 RadientCXPDCF
+ 	 RadientCXPDLL
+ 	 RadientCXPFirmware
+ 	 RadientCXPSys
+   RadientEVCL
+ 	 RadientEVCLCfg
+ 	 RadientEVCLDCF
+ 	 RadientEVCLDLL
+ 	 RadientEVCLFirmware
+ 	 RadientEVCLSys
+   RapixoCL
+ 	 RapixoCLCfg
+ 	 RapixoCLDCF
+ 	 RapixoCLDLL
+ 	 RapixoCLFirmware
+ 	 RapixoCLSys
+   RapixoCXP
+ 	 RapixoCXPCfg
+ 	 RapixoCXPDCF
+ 	 RapixoCXPDLL
+ 	 RapixoCXPFirmware
+ 	 RapixoCXPSys
+   Solios
+ 	 SoliosCfg
+ 	 SoliosDCF
+ 	 SoliosDLL
+ 	 SoliosFirmware
+ 	 SoliosSys
+   SuperSight
+ 	 SuperSightCfg
+ 	 SuperSightDCF
+ 	 SuperSightDLL
+ 	 SuperSightFirmware
+ 	 SuperSightSys	  	 
+   SuperSightUno
+ 	 SuperSightUnoCfg
+ 	 SuperSightUnoTools
+ 	 SuperSightUnoDLL
+   mtx4Sight
+ 	 mtx4SightComp
+   ConcordPoE
+ 	 concordpoeCfg
+ 	 concordpoeDCF
+ 	 concordpoeDLL
+ 	 concordpoeFirmware
+ 	 concordpoeSys
+   mtxGigE
+ 	 mtxgigeComp
+ 	 mtxGigEDCF
+ 	 mtxGigEDLL
+ 	 mtxgigeXML
+ 	 mtxGigESys
+   usb3vision
+ 	 usb3visionCfg
+ 	 usb3visionDCF
+ 	 usb3visionDLL
+ 	 usb3visionSYS
+   ConcordPoE
+ 	 concordpoeCfg
+ 	 concordpoeDCF
+ 	 concordpoeDLL
+ 	 concordpoeFirmware
+ 	 concordpoeSys
+   GenTLConsumer
+ 	 GenTLConsumer.cfg
+   Host
+ 	 HostCfg
+ 	 HostDCF
+ 	 HostVCF
+   CameraLink
+ 	 CamLinkDLLwin32
+ 	 CamLinkDLLwin64
+   drvmanage
+ 	 Mtxdrivers
+ 	 MtxNonPagedMemoryChecker
+ 	 SIFAndTools
+   GenICam
+ 	 FeatureBrowser
+ 	 GenICam
+ 	 milwebserver.dll
+   mtxgigefilter
+ 	 mtxgigefilterComp
+ 	 mtxgigefilterSys
+   gigeservice
+ 	 gigeservice
+   MtxSerialStdw
+ 	 cfg
+ 	 MtxSerialStdw
+   MtxAux
+ 	 MtxAuxCFG
+ 	 MtxAuxDLL
+ 	 MtxAuxFirmware
+ 	 MtxAuxSYS
+   mtxwatchdogmanager
+ 	 mtxwatchdogmanage_tool
+ 	 mtxwatchdogmanager.sif
+BenchAndExampleLauncher
+   bchsummary_full
+      bchsummary_full
+   bchsummary_lite
+      bchsummary_lite
+   ExampleLauncher
+   MILBench
+Images
+   ImagesGeneral
+      ImagesGeneral
+   ImagesFull
+       ImagesFull
+MilControlCenter
+   MilControlCenter
+DEV_Tools
+   DEV_Tools_Full
+      CodeReader.exe
+	  ColorAnalysis.exe
+	  EdgeFinder.exe
+	  Metrology.exe
+	  OcrReader.exe
+	  StringReader.exe
+	  ThreeD_Doc
+   DEV_Tools_Lite
+      Matrox.AccessMilHelp.dll
+	  Matrox.MilDatagram.dll
+	  Matrox.MilDictionary.dll
+	  Matrox.MilParameterConverter.dll
+	  Matrox.MilTraceManager.dll
+	  Matrox.MilXmlParameterDictionary.dll
+	  MilHelpCommandDispatcher
+	  milthumbnail
+	  vs_files.txt
+	  vs_files2017.txt
+	  vs_files2019.txt
+	  vs_files2022.txt
+	  VS_Support
+	  VS_SUPPORT2017
+	  VS_SUPPORT2019
+	  VS_SUPPORT2022
+	  vswhere.exe
+   DirectX
+   doNetFx
+      dotNetFx
+   DEV_CommonFiles
+   MILCOM
+      COMComponents
+	     CCLinkConfig
+		 EthernetIPConfig
+		 McomController.dll
+		 milcom.dll
+		 mtxprotocolmanager.sif
+		 MtxProtocolManagerAndDLL.exe
+		 ProfinetConfig
+		 ProfinetProtocol.dll
+		 RobotsConfig
+   milcopilot
+      milcopilot
+   capturework
+      CaptureWorks
+   Intellicam
+      IntellicamDLL
+	  IntellicamDoc
+	  IntellicamEXEC
+	  IntellicamSpec
+   LicenseServer
+   profiler
+      Profiler.exe
+	  ProfilerWrapper
+   AppsUtil
+   Classification
+      PredictCPU
+</InstallTree>
