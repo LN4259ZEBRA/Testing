@@ -450,8 +450,6 @@
 	  </Component>
    </Feature>
    
-   
-
    <Feature Name="Drivers">
       <Feature Name="MILFPGA_DLL">
  	    <Component Name="MILFPGA_DLL" Destination="[INSTALLDIR]MIL\\DLL">
@@ -539,82 +537,293 @@
 		</Feature>
       </Feature>
       <Feature Name="GenTLProducer">
-	     <Component Name="ProducerFiles"
+	     <Component Name="ProducerFiles" Destination="[INSTALLDIR]Drivers\\GenTLProducer\\Win64" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GenTLProducer\\Matrox.CoaXPress.cti" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GenTLProducer\\Matrox.Services.dll" /> 
+		 </Component>
 	  </Feature>
  	 
-   MilGenTLComponents
- 	 GenTL_dcf
- 	 MilGenTLdll
- 	 MilGenTLUIdll
-   GPU
- 	 GPUComp
- 	 GPUDLL
-   ClarityUHD
- 	 ClarityUHDCfg
- 	 ClarityUHDDCF
- 	 ClarityUHDDLL
- 	 ClarityUHDEdid
- 	 ClarityUHDSys
- 	 firmware
-   Indio
- 	 Indio.cfg
- 	 milaux.dll
- 	 MtxAuxFST
- 	 mtxauxSyS
-   IrisGTR
- 	 IrisGTRCfg
- 	 IrisGTRDCF
- 	 IrisGTRDLL
- 	 IrisGTRFirmware
- 	 IrisGTRSys
-   IrisGTX
- 	 IrisGTXCfg
- 	 IrisGTXDCF
- 	 IrisGTXDLL
- 	 IrisGTXFirmware
- 	 IrisGTXSys
-   Nexis2
- 	 Nexis2Cfg
- 	 Nexis2DCF
- 	 Nexis2DLL
- 	 Nexis2Firmware
- 	 Nexis2Sys
-   Nexis3
- 	 Nexis3Cfg
- 	 Nexis3DCF
- 	 Nexis3DLL
- 	 Nexis3Firmware
- 	 Nexis3Sys
-   RadientCXP
- 	 RadientCXPCfg
- 	 RadientCXPDCF
- 	 RadientCXPDLL
- 	 RadientCXPFirmware
- 	 RadientCXPSys
-   RadientEVCL
- 	 RadientEVCLCfg
- 	 RadientEVCLDCF
- 	 RadientEVCLDLL
- 	 RadientEVCLFirmware
- 	 RadientEVCLSys
-   RapixoCL
- 	 RapixoCLCfg
- 	 RapixoCLDCF
- 	 RapixoCLDLL
- 	 RapixoCLFirmware
- 	 RapixoCLSys
-   RapixoCXP
- 	 RapixoCXPCfg
- 	 RapixoCXPDCF
- 	 RapixoCXPDLL
- 	 RapixoCXPFirmware
- 	 RapixoCXPSys
-   Solios
- 	 SoliosCfg
- 	 SoliosDCF
- 	 SoliosDLL
- 	 SoliosFirmware
- 	 SoliosSys
+      <Feature Name="MilGenTLComponents">
+	     <Component Name="GenTL_dcf" Destination="[INSTALLDIR]Drivers\\GenTLProducer\\Win64" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GenTLConsumer\\dcf" /> 
+		 </Component>
+		 <Component Name="MilGenTLdll" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GenTLConsumer\\MilGenTL.dll" /> 
+		 </Component>
+         <Component Name="MilGenTLUIdll" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GenTLConsumer\\MilGenTLUI.dll" /> 
+		 </Component>
+	  </Feature>
+      <Feature Name="GPU">
+ 	     <Component Name="GPUComp" Destination="[INSTALLDIR]Drivers\\GPU">
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\gpu\\gpu.cfg" /> 
+		 </Component>
+		 <Component Name="GPUDLL" Destination="[INSTALLDIR]MIL\\DLL">
+		    <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\MilGPU.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\MilGPUd3d9.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\MilGPUd3d10.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\MilGPUd3d11.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\MilDirectX.dll" /> 
+		 </Component>
+	  </Feature>
+      <Feature Name="ClarityUHD">
+	     <Component Name="ClarityUHDCfg" Destination="[INSTALLDIR]Drivers\\ClarityUHD" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\ClarityUHD.cfg" /> 
+		 </Component>
+		 <Component Name="ClarityUHDDCF" Destination="[INSTALLDIR]Drivers\\ClarityUHD\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\dcf" /> 
+	     </Component>
+ 	     <Component Name="ClarityUHDDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MilClarityUHD.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MilClarityUHDUI.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\Liberatus.dll" /> 			
+	     </Component>
+ 	     <Component Name="ClarityUHDEdid" Destination="[INSTALLDIR]Drivers\\ClarityUHD\\edid" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\edid" /> 
+	     </Component>
+ 	     <Component Name="ClarityUHDSys" Destination="[INSTALLDIR]Drivers\\ClarityUHD\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\sys\\ClarityUHD.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\sys\\ClarityUHD.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\sys\\ClarityUHD.sys" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\sys\\ClarityUHDum.dll" /> 
+		 </Component>
+ 	     <Component Name="firmware" Destination="[INSTALLDIR]Drivers\\ClarityUHD\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\firmware" /> 
+	     </Component>   
+	  </Feature>
+ 	  <Feature Name="GevIQ">
+	     <Component Name="GevIQcfg" Destination="[INSTALLDIR]Drivers\\GevIQ" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\GevIQ.cfg" /> 
+		 </Component>
+		 <Component Name="GevIQdcf" Destination="[INSTALLDIR]Drivers\\GevIQ\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\dcf" /> 
+	     </Component>
+ 	     <Component Name="GevIQdll" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MilGevIQ.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MilGevIQUI.dll" /> 
+	     </Component>
+
+ 	     <Component Name="GenIQSys" Destination="[INSTALLDIR]Drivers\\GevIQ\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\sys\\geviq.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\sys\\geviq.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\sys\\geviq.sys" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\sys\\geviqethernet.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\sys\\geviqethernet.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\sys\\geviqethernet.sys" /> 
+		 </Component>
+ 	     <Component Name="GevIQfirmware" Destination="[INSTALLDIR]Drivers\\GevIQ\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\firmware" /> 
+	     </Component>   
+	  </Feature>
+	  <Feature Name="Indio">
+	     <Component Name="Indio.cfg" Destination="[INSTALLDIR]Drivers\\\Indio" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\\Indio\\\Indio.cfg" /> 
+		 </Component>
+
+ 	     <Component Name="milaux.dll" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MilAux.dll" /> 
+	     </Component>
+
+ 	     <Component Name="mtxauxSyS" Destination="[INSTALLDIR]Drivers\\\MtxAux\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.sys" /> 
+		 </Component>
+ 	     <Component Name="MtxAuxFST" Destination="[INSTALLDIR]Drivers\\MtxAux\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\MtxAux\\firmware" /> 
+	     </Component>   
+	  </Feature>
+	  <Feature Name="IrisGTR">
+	     <Component Name="IrisGTRCfg" Destination="[INSTALLDIR]Drivers\\IrisGTR" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTR\\irisgtr.cfg" /> 
+		 </Component>
+		 <Component Name="IrisGTRDCF" Destination="[INSTALLDIR]Drivers\\IrisGTR\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTR\\dcf" /> 
+	     </Component>
+ 	     <Component Name="IrisGTRDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milirisgtr.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milirisgtrUI.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MILIrisGTRFocusDelay.dll" /> 
+	     </Component>
+
+ 	     <Component Name="IrisGTRSys" Destination="[INSTALLDIR]Drivers\\IrisGTR\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTR\\sys\\irisgtr.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTR\\sys\\irisgtr.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTR\\sys\\irisgtr.sys" /> 
+		 </Component>
+ 	     <Component Name="IrisGTRFirmware" Destination="[INSTALLDIR]Drivers\\IrisGTR\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTR\\firmware" /> 
+	     </Component>   
+      </Feature>
+	  <Feature Name="IrisGTX">
+	     <Component Name="IrisGTXCfg" Destination="[INSTALLDIR]Drivers\\IrisGTX" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTX\\IrisGTX.cfg" /> 
+		 </Component>
+		 <Component Name="IrisGTXDCF" Destination="[INSTALLDIR]Drivers\\IrisGTX\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTX\\dcf" /> 
+	     </Component>
+ 	     <Component Name="IrisGTXDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milIrisGTX.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milIrisGTXUI.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MILIrisGTXFocusDelay.dll" /> 
+	     </Component>
+
+ 	     <Component Name="IrisGTXSys" Destination="[INSTALLDIR]Drivers\\IrisGTX\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTX\\sys\\IrisGTX.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTX\\sys\\IrisGTX.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTX\\sys\\IrisGTX.sys" /> 
+		 </Component>
+ 	     <Component Name="IrisGTXFirmware" Destination="[INSTALLDIR]Drivers\\IrisGTX\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTX\\firmware" /> 
+	     </Component>   
+      </Feature>
+      <Feature Name="Nexis2">
+	     <Component Name="Nexis2Cfg" Destination="[INSTALLDIR]Drivers\\Nexis2" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis2\\Nexis2.cfg" /> 
+		 </Component>
+		 <Component Name="Nexis2DCF" Destination="[INSTALLDIR]Drivers\\Nexis2\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis2\\dcf" /> 
+	     </Component>
+ 	     <Component Name="Nexis2DLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milNexis2.dll" /> 
+	     </Component>
+
+ 	     <Component Name="Nexis2Sys" Destination="[INSTALLDIR]Drivers\\Nexis2\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis2\\sys\\Nexis2.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis2\\sys\\Nexis2.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis2\\sys\\Nexis2.sys" /> 
+		 </Component>
+ 	     <Component Name="Nexis2Firmware" Destination="[INSTALLDIR]Drivers\\Nexis2\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis2\\firmware" /> 
+	     </Component>   
+      </Feature>
+	  <Feature Name="Nexis3">
+	     <Component Name="Nexis3Cfg" Destination="[INSTALLDIR]Drivers\\Nexis3" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis3\\Nexis3.cfg" /> 
+		 </Component>
+		 <Component Name="Nexis3DCF" Destination="[INSTALLDIR]Drivers\\Nexis3\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis3\\dcf" /> 
+	     </Component>
+ 	     <Component Name="Nexis3DLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milNexis3.dll" /> 
+	     </Component>
+
+ 	     <Component Name="Nexis3Sys" Destination="[INSTALLDIR]Drivers\\Nexis3\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis3\\sys\\Nexis3.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis3\\sys\\Nexis3.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis3\\sys\\Nexis3.sys" /> 
+		 </Component>
+ 	     <Component Name="Nexis3Firmware" Destination="[INSTALLDIR]Drivers\\Nexis3\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis3\\firmware" /> 
+	     </Component>   
+      </Feature>
+	  <Feature Name="RadientCXP">
+	     <Component Name="RadientCXPComp" Destination="[INSTALLDIR]Drivers\\RadientCXP" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\RadientCXP.cfg" /> 
+		 </Component>
+		 <Component Name="RadientCXPDCF" Destination="[INSTALLDIR]Drivers\\RadientCXP\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\dcf" /> 
+	     </Component>
+ 	     <Component Name="RadientCXPDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRadientCXP.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRadientCXPUI.dll" /> 
+	     </Component>
+
+ 	     <Component Name="RadientCXPSys" Destination="[INSTALLDIR]Drivers\\RadientCXP\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\sys\\RadientCXP.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\sys\\RadientCXP.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\sys\\RadientCXP.sys" /> 
+		 </Component>
+ 	     <Component Name="RadientCXPFirmware" Destination="[INSTALLDIR]Drivers\\RadientCXP\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\firmware" /> 
+	     </Component>   
+      </Feature>
+	  <Feature Name="RadientEVCL">
+	     <Component Name="RadientEVCLComp" Destination="[INSTALLDIR]Drivers\\RadientEVCL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEVCL\\RadientEVCL.cfg" /> 
+		 </Component>
+		 <Component Name="RadientEVCLDCF" Destination="[INSTALLDIR]Drivers\\RadientEVCL\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEVCL\\dcf" /> 
+	     </Component>
+ 	     <Component Name="RadientEVCLDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRadientEVCL.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRadientEVCLUI.dll" /> 
+	     </Component>
+
+ 	     <Component Name="RadientEVCLSys" Destination="[INSTALLDIR]Drivers\\RadientEVCL\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEVCL\\sys\\RadientEVCL.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEVCL\\sys\\RadientEVCL.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEVCL\\sys\\RadientEVCL.sys" /> 
+		 </Component>
+ 	     <Component Name="RadientEVCLFirmware" Destination="[INSTALLDIR]Drivers\\RadientEVCL\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEVCL\\firmware" /> 
+	     </Component>   
+      </Feature>
+      
+	  <Feature Name="RapixoCL">
+	     <Component Name="RapixoCLComp" Destination="[INSTALLDIR]Drivers\\RapixoCL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\RapixoCL.cfg" /> 
+		 </Component>
+		 <Component Name="RapixoCLDCF" Destination="[INSTALLDIR]Drivers\\RapixoCL\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\dcf" /> 
+	     </Component>
+ 	     <Component Name="RapixoCLDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRapixoCL.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRapixoCLUI.dll" /> 
+	     </Component>
+
+ 	     <Component Name="RapixoCLSys" Destination="[INSTALLDIR]Drivers\\RapixoCL\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\sys\\RapixoCL.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\sys\\RapixoCL.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\sys\\RapixoCL.sys" /> 
+		 </Component>
+ 	     <Component Name="RapixoCLFirmware" Destination="[INSTALLDIR]Drivers\\RapixoCL\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\firmware" /> 
+	     </Component>   
+      </Feature>
+	  <Feature Name="RapixoCXP">
+	     <Component Name="RapixoCXPComp" Destination="[INSTALLDIR]Drivers\\RapixoCXP" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\RapixoCXP.cfg" /> 
+		 </Component>
+		 <Component Name="RapixoCXPDCF" Destination="[INSTALLDIR]Drivers\\RapixoCXP\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\dcf" /> 
+	     </Component>
+ 	     <Component Name="RapixoCXPDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRapixoCXP.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRapixoCXPUI.dll" /> 
+	     </Component>
+
+ 	     <Component Name="RapixoCXPSys" Destination="[INSTALLDIR]Drivers\\RapixoCXP\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\sys\\RapixoCXP.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\sys\\RapixoCXP.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\sys\\RapixoCXP.sys" /> 
+		 </Component>
+ 	     <Component Name="RapixoCXPFirmware" Destination="[INSTALLDIR]Drivers\\RapixoCXP\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\firmware" /> 
+	     </Component>   
+      </Feature>
+	  <Feature Name="Solios">
+	     <Component Name="SoliosComp" Destination="[INSTALLDIR]Drivers\\Solios" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\Solios.cfg" /> 
+		 </Component>
+		 <Component Name="SoliosDCF" Destination="[INSTALLDIR]Drivers\\Solios\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\dcf" /> 
+	     </Component>
+ 	     <Component Name="SoliosDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milSolios.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milSoliosUI.dll" /> 
+	     </Component>
+
+ 	     <Component Name="SoliosSys" Destination="[INSTALLDIR]Drivers\\Solios\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\sys\\Solios.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\sys\\Solios.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\sys\\Solios.sys" /> 
+		 </Component>
+ 	     <Component Name="SoliosFirmware" Destination="[INSTALLDIR]Drivers\\Solios\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\firmware" /> 
+	     </Component>   
+      </Feature>
+   
    SuperSight
  	 SuperSightCfg
  	 SuperSightDCF
