@@ -358,7 +358,7 @@
 			   <File Source="[PATH_TO_CDBUILDER_FILES]MilUseQuery\\MILUsequery.exe" /> 
 			   <File Source="[PATH_TO_CDBUILDER_FILES]specialregkey.exe" /> 
 			</Component>
-			<Component Name="opengl32.dll" Destination="[INSTALLDIR]Tools\\\DisplayTools">>
+			<Component Name="opengl32.dll" Destination="[INSTALLDIR]Tools\\DisplayTools">>
 			   <File Source="[PATH_TO_CDBUILDER_FILES]tools\\opengl32.dll" /> 
 			</Component>
 			<Component Name="uninstallhelper.exe" Destination="[INSTALLDIR]Tools\\Install">>
@@ -616,15 +616,15 @@
 	     </Component>   
 	  </Feature>
 	  <Feature Name="Indio">
-	     <Component Name="Indio.cfg" Destination="[INSTALLDIR]Drivers\\\Indio" >
-		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\\Indio\\\Indio.cfg" /> 
+	     <Component Name="Indio.cfg" Destination="[INSTALLDIR]Drivers\\Indio" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Indio\\Indio.cfg" /> 
 		 </Component>
 
  	     <Component Name="milaux.dll" Destination="[INSTALLDIR]MIL\\DLL" >
 		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MilAux.dll" /> 
 	     </Component>
 
- 	     <Component Name="mtxauxSyS" Destination="[INSTALLDIR]Drivers\\\MtxAux\\sys" >
+ 	     <Component Name="mtxauxSyS" Destination="[INSTALLDIR]Drivers\\MtxAux\\sys" >
 	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.cat" /> 
 			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.inf" /> 
 			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.sys" /> 
@@ -823,75 +823,204 @@
 		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\firmware" /> 
 	     </Component>   
       </Feature>
-   
-   SuperSight
- 	 SuperSightCfg
- 	 SuperSightDCF
- 	 SuperSightDLL
- 	 SuperSightFirmware
- 	 SuperSightSys	  	 
-   SuperSightUno
- 	 SuperSightUnoCfg
- 	 SuperSightUnoTools
- 	 SuperSightUnoDLL
-   mtx4Sight
- 	 mtx4SightComp
-   ConcordPoE
- 	 concordpoeCfg
- 	 concordpoeDCF
- 	 concordpoeDLL
- 	 concordpoeFirmware
- 	 concordpoeSys
-   mtxGigE
- 	 mtxgigeComp
- 	 mtxGigEDCF
- 	 mtxGigEDLL
- 	 mtxgigeXML
- 	 mtxGigESys
-   usb3vision
- 	 usb3visionCfg
- 	 usb3visionDCF
- 	 usb3visionDLL
- 	 usb3visionSYS
-   ConcordPoE
- 	 concordpoeCfg
- 	 concordpoeDCF
- 	 concordpoeDLL
- 	 concordpoeFirmware
- 	 concordpoeSys
-   GenTLConsumer
- 	 GenTLConsumer.cfg
-   Host
- 	 HostCfg
- 	 HostDCF
- 	 HostVCF
-   CameraLink
- 	 CamLinkDLLwin32
- 	 CamLinkDLLwin64
-   drvmanage
- 	 Mtxdrivers
- 	 MtxNonPagedMemoryChecker
- 	 SIFAndTools
-   GenICam
- 	 FeatureBrowser
- 	 GenICam
- 	 milwebserver.dll
-   mtxgigefilter
- 	 mtxgigefilterComp
- 	 mtxgigefilterSys
-   gigeservice
- 	 gigeservice
-   MtxSerialStdw
- 	 cfg
- 	 MtxSerialStdw
-   MtxAux
- 	 MtxAuxCFG
- 	 MtxAuxDLL
- 	 MtxAuxFirmware
- 	 MtxAuxSYS
-   mtxwatchdogmanager
- 	 mtxwatchdogmanage_tool
- 	 mtxwatchdogmanager.sif
+	  <Feature Name="SuperSight">
+	     <Component Name="SuperSight" Destination="[INSTALLDIR]Drivers\\SuperSight" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\SuperSight" /> 
+		 </Component>
+ 	     <Component Name="SuperSightDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]mil\dll\milpcie.dll" /> 
+	     </Component>
+ 	     <Component Name="SuperSightFirmware" Destination="[INSTALLDIR]Drivers\\SuperSight\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\SuperSight\\firmware" /> 
+	     </Component>   
+      </Feature>
+	  <Feature Name="SuperSightUno">
+	     <Component Name="SuperSightUnoCFG" Destination="[INSTALLDIR]Drivers\\SuperSightUno" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\SuperSightUno\\SuperSightUno.cfg" /> 
+		 </Component>
+ 	     <Component Name="SuperSightDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]mil\dll\MilAux.dll" /> 
+	     </Component>
+ 	     <Component Name="SuperSightUnoTools" Destination="[INSTALLDIR]Tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]tools\\ISMMSDK.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]tools\\AsrCore.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]tools\\MtxWatchDogManager.exe" /> 
+	     </Component>   
+      </Feature>
+      <Feature Name="ConcordPoE">
+	     <Component Name="mtx4SightComp" Destination="[INSTALLDIR]Drivers\\ConcordPoE" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ConcordPoE\\ConcordPoE.cfg" /> 
+		 </Component>
+      </Feature>
+      <Feature Name="ConcordPoE">
+	     <Component Name="concordpoeComp" Destination="[INSTALLDIR]Drivers\\ConcordPoE" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ConcordPoE\\ConcordPoE.cfg" /> 
+		 </Component>
+		 <Component Name="concordpoeDCF" Destination="[INSTALLDIR]Drivers\\ConcordPoE\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ConcordPoE\\dcf" /> 
+	     </Component>
+ 	     <Component Name="concordpoeDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milConcordPoE.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milConcordPoEUI.dll" /> 
+	     </Component>
+
+ 	     <Component Name="concordpoeSys" Destination="[INSTALLDIR]Drivers\\ConcordPoE\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\sys\\ConcordPoE.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\sys\\ConcordPoE.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\sys\\ConcordPoE.sys" /> 
+		 </Component>
+ 	     <Component Name="concordpoefirmware" Destination="[INSTALLDIR]Drivers\\ConcordPoE\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ConcordPoE\\firmware" /> 
+	     </Component>   
+      </Feature>
+      <Feature Name="mtxGigE">
+	     <Component Name="mtxgigeComp" Destination="[INSTALLDIR]Drivers\\mtxGigESys" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxGigESys\\mtxGigESys.cfg" /> 
+		 </Component>
+		 <Component Name="mtxGigEDCF" Destination="[INSTALLDIR]Drivers\\mtxGigESys\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxGigESys\\dcf" /> 
+	     </Component>
+ 	     <Component Name="mtxGigEDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milGigEVision.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milGigEVisionUI.dll" /> 
+	     </Component>
+
+ 	     <Component Name="mtxGigESys" Destination="[INSTALLDIR]Drivers\\mtxgige\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\sys\\mtxgige.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\sys\\mtxgige.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\sys\\mtxgige.sys" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\sys\\ConcordGE60.sys" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\sys\\concordgige.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\sys\\concordgige.inf" /> 
+		 </Component>
+ 	     <Component Name="mtxgigeXML" Destination="[INSTALLDIR]Drivers\\mtxgige\\xml" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\xml" /> 
+	     </Component>   
+      </Feature>
+      <Feature Name="usb3vision">
+	     <Component Name="usb3visionCfg" Destination="[INSTALLDIR]Drivers\\usb3vision" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\usb3vision\\usb3vision.cfg" /> 
+		 </Component>
+		 <Component Name="usb3visionDCF" Destination="[INSTALLDIR]Drivers\\usb3vision\\dcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\usb3vision\\dcf" /> 
+	     </Component>
+ 	     <Component Name="usb3visionDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milusb3vision.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milusb3visionUI.dll" /> 
+	     </Component>
+
+ 	     <Component Name="usb3visionSYS" Destination="[INSTALLDIR]Drivers\\usb3vision\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\usb3vision\\sys\\usb3vision.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\usb3vision\\sys\\usb3vision.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\usb3vision\\sys\\usb3vision.sys" /> 
+		 </Component> 
+      </Feature>
+      <Feature Name="GenTLConsumer">
+	     <Component Name="GenTLConsumer.cfg" Destination="[INSTALLDIR]Drivers\\GenTLConsumer" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GenTLConsumer\\GenTLConsumer.cfg" /> 
+		 </Component>
+      </Feature>
+	  <Feature Name="Host">
+	     <Component Name="HOSTCFG" Destination="[INSTALLDIR]Drivers\\Host" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Host\\Host.cfg" /> 
+		 </Component>
+		 <Component Name="HostSDCF" Destination="[INSTALLDIR]Drivers\\Host\\sdcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Host\\sdcf" /> 
+	     </Component>
+         <Component Name="HostVCF" Destination="[INSTALLDIR]Drivers\\Host\\vcf" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Host\\vcf" /> 
+	     </Component>
+      </Feature>
+	  <Feature Name="CameraLink">
+	     <Component Name="CamLinkDLLwin32" Destination="[INSTALLDIR]Drivers\\CameraLinkDLL\\win32">
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\CameraLink\\win32" /> 
+		 </Component>
+		 <Component Name="CamLinkDLLwin64" Destination="[INSTALLDIR]Drivers\\CameraLinkDLL\\win64">
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\CameraLink\\win64" /> 
+		 </Component>
+      </Feature>
+      <Feature Name="drvmanage">
+	     <Component Name="Mtxdrivers" Destination="[INSTALLDIR]Drivers\\Install">
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxservw.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxservw.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxservw.sys" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxmem.sys" /> 
+		 </Component>
+		 <Component Name="MtxNonPagedMemoryChecker" Destination="[INSTALLDIR]Drivers\\Install">
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\MtxNonPagedMemoryChecker.exe" /> 
+		 </Component>
+		 <Component Name="SIFAndTools" Destination="[INSTALLDIR]Drivers\\Install">
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\DMILClusterManager.sif" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\drvmanage.exe" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\milnetworkserver.sif" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxgigeservice.sif" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxsightmonitor.sif" /> 
+		 </Component>
+      </Feature>
+	  <Feature Name="GenICam">
+	     <Component Name="FeatureBrowser" Destination="[INSTALLDIR]Tools\FeatureBrowser">
+		    <File Source="[PATH_TO_CDBUILDER_FILES]tools\\FeatureBrowser" /> 
+		 </Component>
+		 <Component Name="GenICam" Destination="[INSTALLDIR]Drivers\\GenICam">
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\genicam" /> 
+		 </Component>
+		 <Component Name="milwebserver.dll" Destination="[INSTALLDIR]MIL\\DLL">
+		    <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milwebserver.dll" /> 
+		 </Component>
+	  </Feature>
+	  <Feature Name="mtxgigefilter">
+		 <Component Name="mtxgigefilterComp" Destination="[INSTALLDIR]Drivers\\mtxgigefilter" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgigefilter\\mtxgigefilte.stp" /> 
+	     </Component>
+         <Component Name="mtxgigefilterSys" Destination="[INSTALLDIR]Drivers\\mtxgigefilter\\sys" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgigefilter\\mtxgigefilter62.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgigefilter\\mtxgigefilter62.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgigefilter\\mtxgigefilter62.sys" /> 
+	     </Component>
+      </Feature>
+      <Feature Name="gigeservice">
+	     <Component Name="gigeservice" Destination="[INSTALLDIR]tools" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MtxGigeService.exe" /> 
+	     </Component>
+	  </Feature>
+      <Feature Name="MtxSerialStdw">
+	     <Component Name="cfg" Destination="[INSTALLDIR]Drivers\MtxSerialStdw" >
+   		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxserialstdw\\mtxserialstdw.cfg" /> 
+	     </Component>
+   		    
+		 <Component Name="MtxSerialStdw" Destination="[INSTALLDIR]Drivers\\MtxSerialStdw\\sys" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxserialstdw\\sys\\mtxserialstdw.sys" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxserialstdw\\sys\\mtxserialstdw.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxserialstdw\\sys\\mtxserialstdw.inf" /> 
+	     </Component>
+	  </Feature>
+	  <Feature Name="MtxAux">
+	     <Component Name="MtxAuxCFG" Destination="[INSTALLDIR]Drivers\\mtxaux" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\mtxaux.cfg" /> 
+		 </Component>
+ 	     <Component Name="MtxAuxDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milaux.dll" /> 
+	     </Component>
+
+ 	     <Component Name="MtxAuxSYS" Destination="[INSTALLDIR]Drivers\\mtxaux\\sys" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.cat" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.inf" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.sys" /> 
+		 </Component>
+ 	     <Component Name="MtxAuxFirmware" Destination="[INSTALLDIR]Drivers\\mtxaux\\firmware" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\firmware" /> 
+	     </Component>   
+      </Feature>
+      <Feature Name="mtxwatchdogmanager">
+	     <Component Name="mtxwatchdogmanage_tool" Destination="[INSTALLDIR]tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]tools\\ISMMSDK.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]tools\\AsrCore.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]tools\\MtxWatchDogManager.exe" /> 
+	     </Component>   
+		 <Component Name="mtxwatchdogmanager.sif" Destination="[INSTALLDIR]Drivers\\Install" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxwatchdogmanager.sif" /> 
+	     </Component>   
+	  </Feature>
    </Feature>	 
 	 
 BenchAndExampleLauncher
