@@ -6,8 +6,7 @@
 			<File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
 		 </Component>
 	  </Feature>
-   
-   
+
       <Feature Name="DriversFiles">
          <Feature Name="BoardSpecific_Full">
 	        <Component Name="BoardSpecificFull" Destination="[INSTALLDIR]MIL\\Examples\\BoardSpecific">
@@ -41,7 +40,7 @@
 	     </Feature>
 	     
 		 
-	  </Feature>
+      </Feature>
 
       <Feature Name="MilDEV_Examples">
          <Feature Name="Examples_schema">
@@ -1022,77 +1021,203 @@
 	     </Component>   
 	  </Feature>
    </Feature>	 
-	 
-BenchAndExampleLauncher
-   bchsummary_full
-      bchsummary_full
-   bchsummary_lite
-      bchsummary_lite
-   ExampleLauncher
-   MILBench
-Images
-   ImagesGeneral
-      ImagesGeneral
-   ImagesFull
-       ImagesFull
-MilControlCenter
-   MilControlCenter
-DEV_Tools
-   DEV_Tools_Full
-      CodeReader.exe
-	  ColorAnalysis.exe
-	  EdgeFinder.exe
-	  Metrology.exe
-	  OcrReader.exe
-	  StringReader.exe
-	  ThreeD_Doc
-   DEV_Tools_Lite
-      Matrox.AccessMilHelp.dll
-	  Matrox.MilDatagram.dll
-	  Matrox.MilDictionary.dll
-	  Matrox.MilParameterConverter.dll
-	  Matrox.MilTraceManager.dll
-	  Matrox.MilXmlParameterDictionary.dll
-	  MilHelpCommandDispatcher
-	  milthumbnail
-	  vs_files.txt
-	  vs_files2017.txt
-	  vs_files2019.txt
-	  vs_files2022.txt
-	  VS_Support
-	  VS_SUPPORT2017
-	  VS_SUPPORT2019
-	  VS_SUPPORT2022
-	  vswhere.exe
-   DirectX
-   doNetFx
-      dotNetFx
-   DEV_CommonFiles
-   MILCOM
-      COMComponents
-	     CCLinkConfig
-		 EthernetIPConfig
-		 McomController.dll
-		 milcom.dll
-		 mtxprotocolmanager.sif
-		 MtxProtocolManagerAndDLL.exe
-		 ProfinetConfig
-		 ProfinetProtocol.dll
-		 RobotsConfig
-   milcopilot
-      milcopilot
-   capturework
-      CaptureWorks
-   Intellicam
-      IntellicamDLL
-	  IntellicamDoc
-	  IntellicamEXEC
-	  IntellicamSpec
-   LicenseServer
-   profiler
-      Profiler.exe
-	  ProfilerWrapper
-   AppsUtil
-   Classification
-      PredictCPU
+   <Feature Name="BenchAndExampleLauncher">
+      <Feature Name="bchsummary_full">
+	     <Component Name="bchsummary_full" Destination="[INSTALLDIR]Tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]BchSummary\\bchsummary.bch" /> 
+	     </Component>   
+	  </Feature>
+	  <Feature Name="bchsummary_lite">
+	     <Component Name="bchsummary_lite" Destination="[INSTALLDIR]Tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]BchSummary\\lite\\bchsummary.bch" /> 
+	     </Component>   
+	  </Feature>
+	  <Component Name="ExampleLauncher" Destination="[INSTALLDIR]Tools" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]tools\\ExampleLauncher.exe" /> 
+      </Component>   
+      <Component Name="MILBench" Destination="[INSTALLDIR]Tools" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]tools\\milbench.exe" /> 
+      </Component>   
+   </Feature>
+   <Feature Name="Images">
+      <Feature Name="ImagesGeneral">
+	     <Component Name="ImagesGeneral" Destination="[INSTALLDIR]Images" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]images\\full" /> 
+	     </Component>   
+	  </Feature>
+	  <Feature Name="ImagesFull">
+	     <Component Name="ImagesFull" Destination="[INSTALLDIR]Images" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]images\\general" /> 
+	     </Component>   
+	  </Feature>
+   </Feature>
+   <Feature Name="DEV_Tools">
+      <Feature Name="DEV_Tools_Full">
+	     <Component Name="CodeReader.exe" Destination="[INSTALLDIR]Tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\CodeReader.exe" /> 
+	     </Component>   
+		 <Component Name="ColorAnalysis.exe" Destination="[INSTALLDIR]Tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\ColorAnalysis.exe" /> 
+	     </Component>   
+		 <Component Name="EdgeFinder.exe" Destination="[INSTALLDIR]Tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\EdgeFinder.exe" /> 
+	     </Component>   
+		 <Component Name="Metrology.exe" Destination="[INSTALLDIR]Tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Metrology.exe" /> 
+	     </Component>   
+		 <Component Name="OcrReader.exe" Destination="[INSTALLDIR]Tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\OcrReader.exe" /> 
+	     </Component>   
+		 <Component Name="StringReader.exe" Destination="[INSTALLDIR]Tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\StringReader.exe" /> 
+	     </Component>   
+		 <Component Name="ThreeD_Doc" Destination="[INSTALLDIR]Tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\3D Setup Helper.xls" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Setting up for laser-based 3D scanning.pdf" /> 
+	     </Component>   
+	  </Feature>
+	  <Feature Name="DEV_Tools_Lite">
+	     <Component Name="Matrox.AccessMilHelp.dll" Destination="[INSTALLDIR]Tools\\Profiler" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Profiler\\Matrox.AccessMILHelp.dll" /> 
+	     </Component>   
+		 <Component Name="Matrox.MilDatagram.dll" Destination="[INSTALLDIR]Tools\\Profiler" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Profiler\\Matrox.MilDatagram.dll" /> 
+	     </Component>   
+		 <Component Name="Matrox.MilDictionary.dll" Destination="[INSTALLDIR]Tools\\Profiler" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Profiler\\Matrox.MilDictionary.dll" /> 
+	     </Component>   
+		 <Component Name="Matrox.MilParameterConverter.dll" Destination="[INSTALLDIR]Tools\\Profiler" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Profiler\\Matrox.MilParameterConverter.dll" /> 
+	     </Component>   
+		 <Component Name="Matrox.MilTraceManager.dll" Destination="[INSTALLDIR]Tools\\Profiler" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Profiler\\Matrox.MilTraceManager.dll" /> 
+	     </Component>   
+		 <Component Name="Matrox.MilTraceManager.dll" Destination="[INSTALLDIR]Tools\\Profiler" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Profiler\\Matrox.MilTraceManager.dll" /> 
+	     </Component>   
+		 <Component Name="MilHelpCommandDispatcher" Destination="[INSTALLDIR]Tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\MilHelpCommandDispatcher.exe" /> 
+	     </Component>   
+		 <Component Name="milthumbnail" Destination="[INSTALLDIR]Tools\\milthumbnail" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\MilThumbnail\\MilThumbnailDLL.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]Tools\\MilThumbnail\\MilThumbnailUtilities.dll" /> 
+	     </Component>   
+		 <Component Name="vs_files.txt" Destination="[INSTALLDIR]MIL\\Config\\VS_SUPPORT" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\VS_SUPPORT\\vs_files.txt" /> 
+	     </Component>   
+		 <Component Name="vs_files2017.txt" Destination="[INSTALLDIR]MIL\\Config\\VS_SUPPORT2017" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\VS_SUPPORT2017\\vs_files.txt" /> 
+	     </Component>   
+		 <Component Name="vs_files2019.txt" Destination="[INSTALLDIR]MIL\\Config\\VS_SUPPORT2019" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\VS_SUPPORT2019\\vs_files.txt" /> 
+	     </Component>   
+		 <Component Name="vs_files2022.txt" Destination="[INSTALLDIR]MIL\\Config\\VS_SUPPORT2022" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\VS_SUPPORT2019\\vs_files.txt" /> 
+	     </Component>   
+		 <Component Name="VS_Support" Destination="[INSTALLDIR]Tools\\VS_SUPPORT" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]tools\\vs_support" /> 
+	     </Component>   
+		 <Component Name="VS_Support2017" Destination="[INSTALLDIR]Tools\\VS_SUPPORT" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]tools\\vs_support" /> 
+	     </Component>   
+		 <Component Name="VS_Support2019" Destination="[INSTALLDIR]Tools\\VS_SUPPORT" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]tools\\vs_support" /> 
+	     </Component>   
+		 <Component Name="VS_Support2022" Destination="[INSTALLDIR]Tools\\VS_SUPPORT" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]tools\\vs_support" /> 
+	     </Component>   
+		 <Component Name="vswhere.exe" Destination="[INSTALLDIR]Tools" >
+		    <File Source="[PATH_TO_CDBUILDER_FILES]tools\\vswhere.exe" /> 
+	     </Component>   
+	  </Feature>
+   </Feature>
+   <Feature Name="DirectX">
+   </Feature>
+   <Feature Name="doNetFx">
+      <Component Name="dotNetFx" Destination="[INSTALLDIR]Tools\\Install\\dotNetFX" >
+	     <File Source="[PATH_TO_CDBUILDER_FILES]dotNetFX\\dotNetFx480_Client_x86_x64.exe" /> 
+		 <File Source="[PATH_TO_CDBUILDER_FILES]dotNetFX\\windowsdesktop-runtime-6.0.4-win-x64.exe" /> 
+	  </Component>   
+   </Feature>
+   <Feature Name="DEV_CommonFiles">
+   </Feature>
+   <Feature Name="MILCOM">
+      <Feature Name="COMComponents">
+	     <Component Name="CCLinkConfig" Destination="[INSTALLDIR]MIL\\Config\\CCLink" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\Cclink" /> 
+	     </Component>   
+		 <Component Name="EthernetIPConfig" Destination="[INSTALLDIR]MIL\\Config\\EthernetIPConfig" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\EthernetIPConfig" /> 
+	     </Component>   
+		 <Component Name="CCLinkConfig" Destination="[INSTALLDIR]MIL\\DLL" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\McomController.dll" /> 
+	     </Component>   
+		 <Component Name="milcom.dll" Destination="[INSTALLDIR]MIL\\DLL" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milcom.dll" /> 
+	     </Component>   
+		 <Component Name="mtxprotocolmanager.sif" Destination="[INSTALLDIR]Drivers\\Install" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxprotocolmanager.sif" /> 
+	     </Component>   
+		 <Component Name="MtxProtocolManagerAndDLL.exe" Destination="[INSTALLDIR]Tools" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\MtxProtocol.exe" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]Tools\\MtxProtocolManager.exe" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]Tools\\ModbusProtocol.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]Tools\\EIPProtocol.dll" /> 
+			<File Source="[PATH_TO_CDBUILDER_FILES]Tools\\CclinkProtocol.dll" /> 
+	     </Component>   
+		 <Component Name="ProfinetConfig" Destination="[INSTALLDIR]MIL\\Config\\Profinet" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\Profinet" /> 
+	     </Component>   
+		 <Component Name="ProfinetProtocol.dll" Destination="[INSTALLDIR]Tools" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\ProfinetProtocol.dll" /> 
+	     </Component>   
+		 <Component Name="RobotsConfig" Destination="[INSTALLDIR]MIL\\Config\\Robots" >
+	        <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\Robots" /> 
+	     </Component>   
+	  </Feature>
+   </Feature>
+   <Feature Name="milcopilot">
+      <Component Name="milcopilot" Destination="[INSTALLDIR]MIL Copilot" >
+	     <File Source="[PATH_TO_CDBUILDER_FILES]MIL CoPilot" /> 
+      </Component>   
+   </Feature>
+   <Feature Name="capturework">
+      <Component Name="CaptureWorks" Destination="[INSTALLDIR]Tools" >
+	     <File Source="[PATH_TO_CDBUILDER_FILES]tools\\CaptureWorks.exe" /> 
+		 <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MatroxCaptureWorks.pdf" /> 
+      </Component>   
+   </Feature>
+   <Feature Name="Intellicam">
+      <Component Name="IntellicamDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+	     <File Source="[PATH_TO_CDBUILDER_FILES]Intellicam\\common\\DigitizerController.dll" /> 
+      </Component>   
+	  <Component Name="IntellicamDoc" Destination="[INSTALLDIR]Intellicam" >
+	     <File Source="[PATH_TO_CDBUILDER_FILES]Intellicam\\help" /> 
+      </Component>   
+	  <Component Name="IntellicamEXEC" Destination="[INSTALLDIR]Intellicam" >
+	     <File Source="[PATH_TO_CDBUILDER_FILES]Intellicam\\exec\\Intellicam.exe" /> 
+      </Component>   
+	  <Component Name="IntellicamSpec" Destination="[INSTALLDIR]Intellicam" >
+	     <File Source="[PATH_TO_CDBUILDER_FILES]Intellicam\\specific" /> 
+      </Component>   
+   </Feature>
+   <Feature Name="LicenseServer">
+   </Feature>
+   <Feature Name="profiler">
+      <Component Name="Profiler.exe" Destination="[INSTALLDIR]Tools" >
+	     <File Source="[PATH_TO_CDBUILDER_FILES]tools\\profiler.exe" /> 
+		 <File Source="[PATH_TO_CDBUILDER_FILES]tools\\profiler.exe.config" /> 
+      </Component>   
+	  <Component Name="ProfilerWrapper" Destination="[INSTALLDIR]Tools" >
+	     <File Source="[PATH_TO_CDBUILDER_FILES]tools\\profiler" /> 
+      </Component>   
+   </Feature>
+   <Feature Name="AppsUtil">
+   </Feature>
+   <Feature Name="Classification">
+      <Feature Name="TrainingCPU">
+	     <Component Name="PredictCPU" Destination="[INSTALLDIR]Tools" >
+         </Component>   
+      </Feature>
+   </Feature>
 </InstallTree>
