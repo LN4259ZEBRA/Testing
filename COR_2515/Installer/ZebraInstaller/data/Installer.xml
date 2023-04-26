@@ -1,0 +1,50 @@
+<?xml version = "1.0" ?>
+<InstallTree>
+   <Feature Name="MilDevelopment">
+      <Feature Name="MilDEV_contexts">
+         <Component Name="MilDEV_contexts" Destination="[INSTALLDIR]Contexts">
+            <File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
+         </Component>
+      </Feature>
+   </Feature>
+
+   <Feature Name="DriversFiles">
+      <Feature Name="BoardSpecific_Full">
+         <Component Name="BoardSpecificFull" Destination="[INSTALLDIR]MIL\\Examples\\BoardSpecific">
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\examples\mil.c++\boardspecific\Full" />
+         </Component>
+      </Feature>
+      <Feature Name="BoardSpecific_Lite">
+         <Component Name="AllBoardSpecific" Destination="[INSTALLDIR]MIL\\Examples\\BoardSpecific">
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++\\boardspecific\\General" />
+         </Component>
+      </Feature>
+
+      <Feature Name="CommunGigEFiles">
+         <Component Name="" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn">
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\GVCP_Status_Codes.h" />
+         </Component>
+      </Feature>
+      <Feature Name="DMILFiles">
+         <Feature Name="DMILExamplesFull">
+            <Component Name="DMILExamplesFull" Destination="[INSTALLDIR]MIL\\Examples\\DistributedMIL">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++]\distributedmil\\full"/>
+            </Component>
+         </Feature>
+
+         <Feature Name="DMILExamplesGeneral">
+            <Component Name="DisplayMonitoringDotNet" Destination="[INSTALLDIR]MIL\\Examples\\DistributedMIL\\DMILDisplayMonitoring\\C#">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
+            </Component>
+            <Component Name="DMILExamplesGeneral" Destination="[INSTALLDIR]MIL\\Examples\\DistributedMIL">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL" />
+            </Component>
+         </Feature>
+      </Feature>
+   </Feature>
+</InstallTree>
