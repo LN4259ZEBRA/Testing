@@ -1,90 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-   <xs:element name="InstallTree">
-      <xs:complexType mixed="true">
-         <xs:sequence>
-            <xs:element maxOccurs="unbounded" name="Feature">
-               <xs:complexType>
-                  <xs:sequence>
-                     <xs:element minOccurs="0" maxOccurs="unbounded" name="Feature">
-                        <xs:complexType mixed="true">
-                           <xs:sequence minOccurs="0">
-                              <xs:element minOccurs="0" maxOccurs="unbounded" name="Feature">
-                                 <xs:complexType mixed="true">
-                                    <xs:sequence>
-                                       <xs:element minOccurs="0" maxOccurs="unbounded" name="Feature">
-                                          <xs:complexType>
-                                             <xs:sequence>
-                                                <xs:element maxOccurs="unbounded" name="Component">
-                                                   <xs:complexType>
-                                                      <xs:sequence>
-                                                         <xs:element name="File">
-                                                            <xs:complexType>
-                                                               <xs:attribute name="Source" type="xs:string" use="required" />
-                                                            </xs:complexType>
-                                                         </xs:element>
-                                                      </xs:sequence>
-                                                      <xs:attribute name="Name" type="xs:string" use="required" />
-                                                      <xs:attribute name="Destination" type="xs:string" use="required" />
-                                                   </xs:complexType>
-                                                </xs:element>
-                                             </xs:sequence>
-                                             <xs:attribute name="Name" type="xs:string" use="required" />
-                                          </xs:complexType>
-                                       </xs:element>
-                                       <xs:element minOccurs="0" maxOccurs="unbounded" name="Component">
-                                          <xs:complexType mixed="true">
-                                             <xs:sequence>
-                                                <xs:element maxOccurs="unbounded" name="File">
-                                                   <xs:complexType>
-                                                      <xs:attribute name="Source" type="xs:string" use="required" />
-                                                   </xs:complexType>
-                                                </xs:element>
-                                             </xs:sequence>
-                                             <xs:attribute name="Name" type="xs:string" use="required" />
-                                             <xs:attribute name="Destination" type="xs:string" use="optional" />
-                                          </xs:complexType>
-                                       </xs:element>
-                                    </xs:sequence>
-                                    <xs:attribute name="Name" type="xs:string" use="required" />
-                                    <xs:attribute name="Destination" type="xs:string" use="optional" />
-                                 </xs:complexType>
-                              </xs:element>
-                              <xs:element minOccurs="0" maxOccurs="unbounded" name="Component">
-                                 <xs:complexType mixed="true">
-                                    <xs:sequence>
-                                       <xs:element maxOccurs="unbounded" name="File">
-                                          <xs:complexType>
-                                             <xs:attribute name="Source" type="xs:string" use="required" />
-                                          </xs:complexType>
-                                       </xs:element>
-                                    </xs:sequence>
-                                    <xs:attribute name="Name" type="xs:string" use="required" />
-                                    <xs:attribute name="Destination" type="xs:string" use="required" />
-                                 </xs:complexType>
-                              </xs:element>
-                           </xs:sequence>
-                           <xs:attribute name="Name" type="xs:string" use="required" />
-                        </xs:complexType>
-                     </xs:element>
-                     <xs:element minOccurs="0" maxOccurs="unbounded" name="Component">
-                        <xs:complexType>
-                           <xs:sequence>
-                              <xs:element maxOccurs="unbounded" name="File">
-                                 <xs:complexType>
-                                    <xs:attribute name="Source" type="xs:string" use="required" />
-                                 </xs:complexType>
-                              </xs:element>
-                           </xs:sequence>
-                           <xs:attribute name="Name" type="xs:string" use="required" />
-                           <xs:attribute name="Destination" type="xs:string" use="required" />
-                        </xs:complexType>
-                     </xs:element>
-                  </xs:sequence>
-                  <xs:attribute name="Name" type="xs:string" use="required" />
-               </xs:complexType>
-            </xs:element>
-         </xs:sequence>
+   <!--<xs:complexType name="Variables">
+      <xs:attribute name="]PATH_TO_CDBUILDER_FILES]" type="xs:string" use="required" />
+      <xs:attribute name="[INSTALLDIR]" type="xs:string" use="required" />
+   </xs:complexType>-->
+   
+   <!--File definition-->
+   <xs:element name="File">
+      <xs:complexType>
+         <xs:attribute name="Source" type="xs:string" use="required" />
       </xs:complexType>
+   </xs:element>
+
+   <!--Component definition-->
+   <xs:element name="Component">
+      <xs:complexType>
+         <xs:sequence>
+              <xs:element name="File" minOccurs="1">
+                 <xs:complexType>
+                    <xs:attribute name="Source" type="xs:string" use="required" />
+                 </xs:complexType>
+              </xs:element>
+         </xs:sequence>
+         <xs:attribute name="Name" type="xs:string" use="required" />
+         <xs:attribute name="Destination" type="xs:string" use="required" />
+      </xs:complexType>
+   </xs:element>
+
+   <!--Feature definition-->
+   <xs:element name="Feature">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:choice minOccurs="0">
+               <xs:element name="Component"  />
+               <xs:element name="Feature"  />
+               <xs:element name="File"  />
+            </xs:choice>
+         </xs:sequence>
+         <xs:attribute name="Name" type="xs:string" use="required" />
+      </xs:complexType>
+   </xs:element>
+
+   <!--Installer.xml structure-->
+   <xs:element name="InstallTree">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="Feature"  />
+         </xs:sequence>
+      </xs:complexType>      
    </xs:element>
 </xs:schema>

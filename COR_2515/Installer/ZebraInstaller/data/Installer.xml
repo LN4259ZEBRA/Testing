@@ -1,50 +1,1234 @@
 <?xml version = "1.0" ?>
-<InstallTree>
+
+<InstallTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Installer.xsd">   
    <Feature Name="MilDevelopment">
       <Feature Name="MilDEV_contexts">
          <Component Name="MilDEV_contexts" Destination="[INSTALLDIR]Contexts">
             <File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
          </Component>
       </Feature>
+      
+      <Feature Name="DriversFiles">
+         <Feature Name="BoardSpecific_Full">
+            <Component Name="BoardSpecificFull" Destination="[INSTALLDIR]MIL\\Examples\\BoardSpecific">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\examples\mil.c++\boardspecific\Full" />
+            </Component>
+         </Feature>
+         <Feature Name="BoardSpecific_Lite">
+            <Component Name="AllBoardSpecific" Destination="[INSTALLDIR]MIL\\Examples\\BoardSpecific">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++\\boardspecific\\General" />
+            </Component>
+         </Feature>
+
+         <Feature Name="CommunGigEFiles">
+            <Component Name="" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\GVCP_Status_Codes.h" />
+            </Component>
+         </Feature>
+         <Feature Name="DMILFiles">
+            <Feature Name="DMILExamplesFull">
+               <Component Name="DMILExamplesFull" Destination="[INSTALLDIR]MIL\\Examples\\DistributedMIL">
+                  <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++]\distributedmil\\full"/>
+               </Component>
+            </Feature>
+            <Feature Name="DMILExamplesGeneral">
+               <Component Name="DisplayMonitoringDotNet" Destination="[INSTALLDIR]MIL\\Examples\\DistributedMIL\\DMILDisplayMonitoring\\C#">
+                  <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
+               </Component>
+               <Component Name="DMILExamplesGeneral" Destination="[INSTALLDIR]MIL\\Examples\\DistributedMIL">
+                  <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL" />
+               </Component>
+            </Feature>
+         </Feature>
+
+
+      </Feature>
+
+      <Feature Name="MilDEV_Examples">
+         <Feature Name="Examples_schema">
+            <Component Name="Examples_schema" Destination="[INSTALLDIR]MIL\\Examples\\.schema">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\.schema\\example.xsd" />
+            </Component>
+         </Feature>
+         <Feature Name="MilDEV_Examples_M_VC_Full">
+            <Component Name="MilCopilot_CoreFull" Destination="[INSTALLDIR]MIL\\Examples\\Core\\Full">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MilCopilot\\Core\\Full" />
+            </Component>
+            <Component Name="MilCopilot_Full" Destination="[INSTALLDIR]MIL\Examples\Full">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MilCopilot\\full" />
+            </Component>
+            <Component Name="MilCopilot_General" Destination="[INSTALLDIR]MIL\Examples\General">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MilCopilot\\general" />
+            </Component>
+            <Component Name="MilDev_Examples_Core_Full" Destination="[INSTALLDIR]MIL\\Examples\\Core\\Full">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.C++\\Core\\full" />
+            </Component>
+            <Component Name="MilDEV_Examples_M_VC_Full" Destination="[INSTALLDIR]MIL\\Examples\\Full">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++\\full" />
+            </Component>
+         </Feature>
+         <Feature Name="MilDEV_Examples_M_VC_General">
+            <Component Name="MilDev_Examples_Core_General" Destination="[INSTALLDIR]MIL\\Examples\\Core">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.C++\\Core\\general" />
+            </Component>
+            <Component Name="MilDEV_Examples_M_VC_General" Destination="[INSTALLDIR]MIL\\Examples\\General">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++\\general" />
+            </Component>
+         </Feature>
+         <Feature Name="Processing_M_VC">
+            <Component Name="MilCopilot_Processing" Destination="[INSTALLDIR]MIL\\Examples\\Processing">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MilCopilot\\processing" />
+            </Component>
+            <Component Name="Processing_M_VC" Destination="[INSTALLDIR]MIL\\Examples\\Processing">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++\\processing"  />
+            </Component>
+         </Feature>
+         <Feature Name="MilDEV_Examples_IndustrialICom">
+            <Component Name="Examples_PLC" Destination="[INSTALLDIR]MIL\\Examples\\IndustrialCommunication\\PLC">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.C++\\IndustrialCommunication\\PLC" />
+            </Component>
+            <Component Name="Examples_Robots" Destination="[INSTALLDIR]MIL\\Examples\\IndustrialCommunication\\Robots">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.C++\\IndustrialCommunication\\Robots" />
+            </Component>
+         </Feature>
+      </Feature>
+
+      <Feature Name="MilDEV_Include">
+         <Feature Name="MilDEV_Include_Full">
+            <Component Name="MIDev_Include_class_sub" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn\\Sub">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\sub" />
+            </Component>
+            <Component Name="MilDEV_Include_Full" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dblob.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dim.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dmap.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dmet.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dmod.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dreg.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milagm.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milbead.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milblob.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milcal.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milclass.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milcode.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milcolor.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mildmr.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\miledge.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milmeas.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milmetrol.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milmod.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milocr.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milpat.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milreg.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milstr.h;" />
+            </Component>
+         </Feature>
+         <Feature Name="MilDEV_Include_Lite">
+            <Component Name="MilDEV_Include_Lite" Destination="[INSTALLDIR]MIL\\Include">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\mil.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\Milerr.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\MilFunctionCode.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\milweb.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\o.h;" />
+            </Component>
+            <Component Name="MILDev_Include_lite_sub" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn\\Sub">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\Sub\\milim_ascii.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\Sub\\milim_safetype.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\Sub\\milim_string.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\Sub\\milim_uniqueid.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\Sub\\milim_vector.h;" />
+            </Component>
+            <Component Name="MilDEV_Include_Milim" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3ddisp.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dgeo.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mil3dgra.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milim.h;" />
+            </Component>
+            <Component Name="MilDEV_LIB_Lite_Classic" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mbasictypes.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mildec.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milerror.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milfunc.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milfuncll.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milos.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milproto.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milsetup.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milstring.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\miluniqueid.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milvectdor.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milwarning.h;" />
+            </Component>
+            <Component Name="MilDEV_LIB_Lite_Classic_Dyn" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\mildisplay.h;" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\PFNC.h;" />
+            </Component>
+            <Component Name="MILOOInclude" Destination="[INSTALLDIR]MIL\\Include\\ObjectMIL">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\objectMIL" />
+            </Component>
+         </Feature>
+         <Feature Name="MILFPGA_H">
+            <Component Name="milfpga.h" Destination="[INSTALLDIR]MIL\\Include">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\milfpga.h" />
+            </Component>
+         </Feature>
+
+         <Feature Name="MILCOMHEADER">
+            <Component Name="milcom.h" Destination="[INSTALLDIR]MIL\Include\ClassicMIL\MILDyn">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\milcom.h" />
+            </Component>
+         </Feature>
+      </Feature>
+      <Feature Name="MilDEV_LIB">
+         <Feature Name="MilDEV_LIB_Full">
+            <Component Name="MilDEV_LIB_Full" Destination="[INSTALLDIR]MIL\\LIB">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3dblob.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3dim.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3dmap.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3dmet.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3dmod.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3dreg.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milagm.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milbead.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milblob.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milcal.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milclass.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milcode.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milcolor.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mildmr.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\miledge.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milmeas.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milmetrol.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milmod.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milocr.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milpat.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milreg.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milstr.lib" />
+            </Component>
+         </Feature>
+         <Feature Name="MilDEV_LIB_Lite">
+            <Feature Name="MILFPGA_LIB">
+               <Component Name="milfpga.lib" Destination="[INSTALLDIR]MIL\\LIB">
+                  <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milfpga.lib" />
+               </Component>
+            </Feature>
+            <Component Name="MilDEV_LIB_Lite" Destination="[INSTALLDIR]MIL\\LIB">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\mil3d.lib" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milim.lib" />
+            </Component>
+         </Feature>
+         <Feature Name="MILCOMLIB">
+            <Component Name="milcom.lib" Destination="[INSTALLDIR]MIL\\LIB">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milcom.lib" />
+            </Component>
+         </Feature>
+         <Component Name="milwebclient.lib" Destination="[INSTALLDIR]MIL\\LIB">
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\lib\\milwebclient.lib" />
+         </Component>
+      </Feature>
+      <Feature Name="MilDEV_DOC">
+         <Feature Name="MilDEV_HtmlHelp">
+            <Component Name="HtmlHelp.chm" Destination="[INSTALLDIR]MIL\\DOC\\mil_help" >
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\doc\\help\\html" />
+            </Component>
+            <Component Name="mtxhttpserver.exe" Destination="[INSTALLDIR]Tools" >
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\mtxhttpServer\\mtxhttpserver.exe" />
+            </Component>
+            <Component Name="mtxhttpserver.sif" Destination="[INSTALLDIR]Drivers\\Install" >
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\mtxhttpServer\\mtxhttpserver.sif" />
+            </Component>
+         </Feature>
+      </Feature>
+      <Feature Name="VisualStudioAddOn">
+      </Feature>
    </Feature>
 
-   <Feature Name="DriversFiles">
-      <Feature Name="BoardSpecific_Full">
-         <Component Name="BoardSpecificFull" Destination="[INSTALLDIR]MIL\\Examples\\BoardSpecific">
-            <File Source="[PATH_TO_CDBUILDER_FILES]mil\examples\mil.c++\boardspecific\Full" />
+   <Feature Name="MIL.NET">
+      <Feature Name="Processing_M_NET">
+         <Component Name="Processing_M_NET" Destination="[INSTALLDIR]MIL\\Examples\\Processing">
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.net\\processing" />
          </Component>
       </Feature>
-      <Feature Name="BoardSpecific_Lite">
-         <Component Name="AllBoardSpecific" Destination="[INSTALLDIR]MIL\\Examples\\BoardSpecific">
-            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++\\boardspecific\\General" />
+      <Feature Name="MilDEV_Examples_M_NET">
+         <Feature Name="MilDEV_Examples_M_NET_Full">
+            <Component Name="MilDEV_Examples_M_NET_Full" Destination="[INSTALLDIR]MIL\\Examples\\Full">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.net\\full" />
+            </Component>
+            <Component Name="MilDEV_Examples_NET_Core_Full" Destination="[INSTALLDIR]MIL\\Examples\\Core\\Full">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.net\\core\\full" />
+            </Component>
+         </Feature>
+         <Feature Name="MilDEV_Examples_M_NET_General">
+            <Component Name="MilDEV_Examples_M_NET_General" Destination="[INSTALLDIR]MIL\\Examples\\General">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.net\\general" />
+            </Component>
+            <Component Name="MilDEV_Examples_NET_Core_General" Destination="[INSTALLDIR]MIL\\Examples\\Core">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.net\\core\\general" />
+            </Component>
+         </Feature>
+      </Feature>
+   </Feature>
+
+   <Feature Name="MilRuntime">
+      <Feature Name="MilRT_Display">
+         <Component Name="MilRT_Display" Destination="[INSTALLDIR]MIL\\Config\\Display">
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\config\\display\\exclusive.lst" />
          </Component>
       </Feature>
 
-      <Feature Name="CommunGigEFiles">
-         <Component Name="" Destination="[INSTALLDIR]MIL\\Include\\ClassicMIL\\MILDyn">
-            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\include\\ClassicMIL\\GVCP_Status_Codes.h" />
+
+
+      <Feature Name="MilRT_DLL">
+         <Feature Name="MilRT_DLL_Full">
+            <Component Name="BasicTrainingTools" Destination="[INSTALLDIR]Tools">
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\milclassBEP0.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\milclassBEP0a.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\milclassdh0.dat" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\milclassdm0.dat" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\milclassdp0.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\milclassdp0a.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MILClassProc.exe" />
+            </Component>
+            <Component Name="CNN_Engine" Destination="[INSTALLDIR]Tools">
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\CNNTrainEngineTest.exe" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\CNNPredictEngineTest.exe" />
+            </Component>
+            <Component Name="MilRT_DLL_Full" Destination="[INSTALLDIR]MIL\\DLL">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\mil3dblob.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\mil3dim.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\mil3dmap.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\mil3dmet.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\mil3dmod.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\mil3dreg.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milagm.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milbead.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milblob.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milcal.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milclass.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milcode.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milcolor.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\mildmr.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\miledge.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milmeas.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milmetrol.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milmod.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milocr.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milpat.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milreg.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milstr.dll" />
+            </Component>
+         </Feature>
+         <Feature Name="MilRT_DLL_Lite">
+            <Component Name="MilRT_DLL_Lite" Destination="[INSTALLDIR]MIL\\DLL">
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\MilQSVEngine.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milprocessorinfo.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milmp.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milim.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milgrabc.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\mildisplay.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\mildig.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milcodec.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\mil3d.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\mil.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\libmfxsw64.dll" />
+            </Component>
+         </Feature>
+      </Feature>
+      <Feature Name="MilRT_Tools">
+
+         <Feature Name="MilRT_Tools_Lite">
+            <Component Name="CommonInstallTools" Destination="[INSTALLDIR]Tools\\Install">
+               <File Source="[PATH_TO_CDBUILDER_FILES]ExterFunctions.dll" />
+            </Component>
+            <Component Name="ErrorWarningTxt" Destination="[INSTALLDIR]MIL\\Config\\MIL">
+               >
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\mil\\milwarning.xml" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\mil\\milerror.xml" />
+            </Component>
+            <Component Name="MilRT_Tools_Lite" Destination="[INSTALLDIR]Tools">
+               >
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\pcicheck.exe" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\pcicheck.chm" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\opengltest.exe" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\milnotify.exe" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MilManagedInfo20.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MilManagedInfo40.dll" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MILConfig.exe" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MilInfo.exe" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\GenCode.exe" />
+            </Component>
+            <Component Name="MilUseQuery" Destination="[INSTALLDIR]Tools\\Install\\MILUseQuery">
+               >
+               <File Source="[PATH_TO_CDBUILDER_FILES]MilUseQuery\\MILUsequery.exe" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]specialregkey.exe" />
+            </Component>
+            <Component Name="opengl32.dll" Destination="[INSTALLDIR]Tools\\DisplayTools">
+               >
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\opengl32.dll" />
+            </Component>
+            <Component Name="uninstallhelper.exe" Destination="[INSTALLDIR]Tools\\Install">
+               >
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\uninstallhelper.exe" />
+            </Component>
+         </Feature>
+      </Feature>
+      <Feature Name="MILRT_DotNet">
+         <Component Name="MilInterpCSharp.dll" Destination="[INSTALLDIR]Tools">
+            >
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\Python\\MilInterpCSharp.dll" />
+         </Component>
+         <Component Name="MilInterPythonXX.dll" Destination="[INSTALLDIR]Tools">
+            >
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\Python\\MilInterpPython37.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\Python\\MilInterpPython39.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\Python\\MilInterpPython311.dll" />
+         </Component>
+         <Component Name="MILNET_NuGet" Destination="[INSTALLDIR]MIL\\MIL.NET\\NuGet">
+            >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\mil.net\\nuget" />
+         </Component>
+         <Component Name="MILRT_MIL.NET" Destination="[INSTALLDIR]MIL\\MIL.NET">
+            >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\mil.net\\Matrox.Imaging.ObjectMIL.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\mil.net\\Matrox.Imaging.ObjectMIL.xml" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\mil.net\\Matrox.MatroxImagingLibrary.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\mil.net\\Matrox.MatroxImagingLibrary.WPF.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\mil.net\\Matrox.MatroxImagingLibrary.dll" />
+         </Component>
+         <Component Name="NewPythonDIST" Destination="[INSTALLDIR]MIL\\Scripting\\pythonwrapper\\dist">
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\Python\\new\\dist" />
          </Component>
       </Feature>
-      <Feature Name="DMILFiles">
-         <Feature Name="DMILExamplesFull">
-            <Component Name="DMILExamplesFull" Destination="[INSTALLDIR]MIL\\Examples\\DistributedMIL">
-               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\mil.c++]\distributedmil\\full"/>
+      <Feature Name="MIL_EULA_LITE">
+         <Component Name="MIL_EULA_LITE" Destination="[INSTALLDIR]MIL\\DOC" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\doc\\Lite\\MIL EULA.txt" />
+         </Component>
+      </Feature>
+      <Feature Name="MIL_EULA_FULL">
+         <Component Name="MIL_EULA_FULL" Destination="[INSTALLDIR]MIL\\DOC" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\doc\\MIL EULA.txt" />
+         </Component>
+      </Feature>
+      <Component Name="copyrights.lst" Destination="[INSTALLDIR]MIL\\DOC">
+         <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\doc\\copyrights.lst" />
+      </Component>
+      <Component Name="Corei7MPThresholds" Destination="[INSTALLDIR]MIL\\Config\\MPTargetProcessor">
+         <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\doc\\copyrights.lst" />
+      </Component>
+      <Component Name="LicenseServerFiles"  Destination="[INSTALLDIR]Tools">
+         <File Source="[PATH_TO_CDBUILDER_FILES]localclient.exe" />
+         <File Source="[PATH_TO_CDBUILDER_FILES]MilLicenseServerAdmin.exe.config" />
+         <File Source="[PATH_TO_CDBUILDER_FILES]MilLicenseServerAdmin.exe" />
+      </Component>
+      <Component Name="Localclient.sif"  Destination="[INSTALLDIR]Drivers\\Install">
+         <File Source="[PATH_TO_CDBUILDER_FILES]localclient.sif" />
+      </Component>
+      <Component Name="MESRNFILE"  Destination="[INSTALLDIR]MIL">
+         <File Source="[PATH_TO_CDBUILDER_FILES]mesrn" />
+      </Component>
+      <Component Name="milhttpwebserver.dll" Destination="[INSTALLDIR]MIL\\DLL">
+         <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milhttpserver.dll" />
+      </Component>
+      <Component Name="MilLicenseServerAdmin" Destination="[INSTALLDIR]Tools\\MilLicenseServerAdmin">
+         <File Source="[PATH_TO_CDBUILDER_FILES]MilLicenseServerAdmin\\Matrox.MatroxImagingLibrary.dll" />
+      </Component>
+      <Component Name="milwebdll" Destination="[INSTALLDIR]MIL\\DLL">
+         <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\dll\\milwebserver.dll" />
+         <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\dll\\milwebclient.dll" />
+      </Component>
+      <Component Name="milwebjs" Destination="[INSTALLDIR]Tools\\milweb">
+         <File Source="[PATH_TO_CDBUILDER_FILES]tools\\mil.js" />
+      </Component>
+      <Component Name="Revision" Destination="[INSTALLDIR]MIL">
+         <File Source="[PATH_TO_CDBUILDER_FILES]revision.txt" />
+      </Component>
+      <Component Name="SetupType" Destination="[INSTALLDIR]MIL">
+         <File Source="[PATH_TO_CDBUILDER_FILES]setuptype\\full\\setuptype.txt" />
+      </Component>
+   </Feature>
+   <Feature Name="DMil">
+      <Component Name="DMilDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\dll\\milshm.dll" />
+         <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\dll\\MilNetwork.dll" />
+         <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\dll\\MilNetworkInfo.dll" />
+         <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\dll\\milnetworkserver.dll" />
+         <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\dll\\MilNetworkSlave.dll" />
+      </Component>
+      <Component Name="DMilEXE" Destination="[INSTALLDIR]Tools" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MilNetworkServer.exe" />
+         <File Source="[PATH_TO_CDBUILDER_FILES]tools\\DMILClusterManager.exe" />
+      </Component>
+   </Feature>
+
+   <Feature Name="Drivers">
+      <Feature Name="MILFPGA_DLL">
+         <Component Name="MILFPGA_DLL" Destination="[INSTALLDIR]MIL\\DLL">
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\dll\\milfpga.dll" />
+         </Component>
+      </Feature>
+      <Feature Name="DriversTools">
+         <Feature Name="BoardInfo">
+            <Component Name="BoardInfo" Destination="[INSTALLDIR]Tools">
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\BoardInfo.exe" />
+            </Component>
+         </Feature>
+         <Feature Name="ClarityUHDTools">
+            <Component Name="ClarityUHDTools" Destination="[INSTALLDIR]Tools">
+               <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\tools\\ClarityUHDBench.exe" />
+            </Component>
+         </Feature>
+         <Feature Name="FirmwareUpdater">
+            <Component Name="FirmwareUpdater" Destination="[INSTALLDIR]Tools">
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\FirmwareUpdater.exe" />
+            </Component>
+         </Feature>
+         <Feature Name="MilPerf">
+            <Component Name="MilPerf" Destination="[INSTALLDIR]Tools\\MILPerfMonitor" >
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\milperfmonitor" />
+            </Component>
+            <Component Name="MilPerfDLL" Destination="[INSTALLDIR]MIL\\DLL">
+               <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MilPerf.dll" />
+            </Component>
+            <Component Name="MilPerfEXE" Destination="[INSTALLDIR]Tools">
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MILPerfViewer.exe" />
+            </Component>
+            <Component Name="UsageMeter" Destination="[INSTALLDIR]Tools">
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\UsageMeter.exe" />
+            </Component>
+         </Feature>
+         <Feature Name="RapixoCXPTools">
+            <Component Name="RapixoCXPTools" Destination="[INSTALLDIR]Tools">
+               <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\tools\\EyeScan.exe" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\tools\\RapixoCXPBench.exe" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\tools\\SlaveModeDcfMaker.exe" />
+            </Component>
+         </Feature>
+         <Feature Name="Gecho">
+            <Component Name="Gecho.exe" Destination="[INSTALLDIR]Tools">
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\Gecho.exe" />
+            </Component>
+         </Feature>
+         <Feature Name="GevIQTools">
+            <Component Name="GevIQBench" Destination="[INSTALLDIR]Tools">
+               <File Source="[PATH_TO_CDBUILDER_FILES]boards\\GevIQ\\tools\\GevIQBench.exe" />
             </Component>
          </Feature>
 
-         <Feature Name="DMILExamplesGeneral">
-            <Component Name="DisplayMonitoringDotNet" Destination="[INSTALLDIR]MIL\\Examples\\DistributedMIL\\DMILDisplayMonitoring\\C#">
-               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
-               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
-               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
-               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
-               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
-               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL\\General\\DMILDisplayMonitoring\\C#" />
-            </Component>
-            <Component Name="DMILExamplesGeneral" Destination="[INSTALLDIR]MIL\\Examples\\DistributedMIL">
-               <File Source="[PATH_TO_CDBUILDER_FILES]mil\\examples\\MIL.NET\\DistributedMIL" />
+         <Feature Name="MorphisTools">
+            <Component Name="MorphisBench" Destination="[INSTALLDIR]Tools">
+               <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\morphis\\tools\\MorphisBench.exe" />
             </Component>
          </Feature>
+         <Feature Name="RadientCXPTools" Destination="[INSTALLDIR]Tools">
+            <Component Name="RadientCXPBench">
+               <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\tools\\RadientCXPBench.exe" />
+            </Component>
+         </Feature>
+         <Feature Name="RadientEVCLTools" Destination="[INSTALLDIR]Tools">
+            <Component Name="EVCLBench">
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\DeserializerSetup.exe" />
+               <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEvcl\\tools\\RadientevclBench.exe" />
+            </Component>
+         </Feature>
+         <Feature Name="RapixoCLTools" Destination="[INSTALLDIR]Tools">
+            <Component Name="RapixoCLBench">
+               <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\tools\\RapixoclBench.exe" />
+            </Component>
+         </Feature>
+         <Feature Name="SoliosTools" Destination="[INSTALLDIR]Tools">
+            <Component Name="SoliosBench">
+               <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\solios\\tools\\SoliosBench.exe" />
+            </Component>
+         </Feature>
+         <Feature Name="usb3visionTools" Destination="[INSTALLDIR]Tools">
+            <Component Name="USB3VisionDiag">
+               <File Source="[PATH_TO_CDBUILDER_FILES]tools\\USB3VisionDiag.exe" />
+            </Component>
+         </Feature>
+      </Feature>
+      <Feature Name="GenTLProducer">
+         <Component Name="ProducerFiles" Destination="[INSTALLDIR]Drivers\\GenTLProducer\\Win64" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GenTLProducer\\Matrox.CoaXPress.cti" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GenTLProducer\\Matrox.Services.dll" />
+         </Component>
+      </Feature>
+
+      <Feature Name="MilGenTLComponents">
+         <Component Name="GenTL_dcf" Destination="[INSTALLDIR]Drivers\\GenTLProducer\\Win64" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GenTLConsumer\\dcf" />
+         </Component>
+         <Component Name="MilGenTLdll" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GenTLConsumer\\MilGenTL.dll" />
+         </Component>
+         <Component Name="MilGenTLUIdll" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GenTLConsumer\\MilGenTLUI.dll" />
+         </Component>
+      </Feature>
+      <Feature Name="GPU">
+         <Component Name="GPUComp" Destination="[INSTALLDIR]Drivers\\GPU">
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\gpu\\gpu.cfg" />
+         </Component>
+         <Component Name="GPUDLL" Destination="[INSTALLDIR]MIL\\DLL">
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\MilGPU.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\MilGPUd3d9.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\MilGPUd3d10.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\MilGPUd3d11.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\MilDirectX.dll" />
+         </Component>
+      </Feature>
+      <Feature Name="ClarityUHD">
+         <Component Name="ClarityUHDCfg" Destination="[INSTALLDIR]Drivers\\ClarityUHD" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\ClarityUHD.cfg" />
+         </Component>
+         <Component Name="ClarityUHDDCF" Destination="[INSTALLDIR]Drivers\\ClarityUHD\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\dcf" />
+         </Component>
+         <Component Name="ClarityUHDDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MilClarityUHD.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MilClarityUHDUI.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\Liberatus.dll" />
+         </Component>
+         <Component Name="ClarityUHDEdid" Destination="[INSTALLDIR]Drivers\\ClarityUHD\\edid" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\edid" />
+         </Component>
+         <Component Name="ClarityUHDSys" Destination="[INSTALLDIR]Drivers\\ClarityUHD\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\sys\\ClarityUHD.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\sys\\ClarityUHD.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\sys\\ClarityUHD.sys" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\sys\\ClarityUHDum.dll" />
+         </Component>
+         <Component Name="firmware" Destination="[INSTALLDIR]Drivers\\ClarityUHD\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ClarityUHD\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="GevIQ">
+         <Component Name="GevIQcfg" Destination="[INSTALLDIR]Drivers\\GevIQ" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\GevIQ.cfg" />
+         </Component>
+         <Component Name="GevIQdcf" Destination="[INSTALLDIR]Drivers\\GevIQ\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\dcf" />
+         </Component>
+         <Component Name="GevIQdll" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MilGevIQ.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MilGevIQUI.dll" />
+         </Component>
+
+         <Component Name="GenIQSys" Destination="[INSTALLDIR]Drivers\\GevIQ\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\sys\\geviq.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\sys\\geviq.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\sys\\geviq.sys" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\sys\\geviqethernet.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\sys\\geviqethernet.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\sys\\geviqethernet.sys" />
+         </Component>
+         <Component Name="GevIQfirmware" Destination="[INSTALLDIR]Drivers\\GevIQ\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GevIQ\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="Indio">
+         <Component Name="Indio.cfg" Destination="[INSTALLDIR]Drivers\\Indio" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Indio\\Indio.cfg" />
+         </Component>
+
+         <Component Name="milaux.dll" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MilAux.dll" />
+         </Component>
+
+         <Component Name="mtxauxSyS" Destination="[INSTALLDIR]Drivers\\MtxAux\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.sys" />
+         </Component>
+         <Component Name="MtxAuxFST" Destination="[INSTALLDIR]Drivers\\MtxAux\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\MtxAux\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="IrisGTR">
+         <Component Name="IrisGTRCfg" Destination="[INSTALLDIR]Drivers\\IrisGTR" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTR\\irisgtr.cfg" />
+         </Component>
+         <Component Name="IrisGTRDCF" Destination="[INSTALLDIR]Drivers\\IrisGTR\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTR\\dcf" />
+         </Component>
+         <Component Name="IrisGTRDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milirisgtr.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milirisgtrUI.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MILIrisGTRFocusDelay.dll" />
+         </Component>
+
+         <Component Name="IrisGTRSys" Destination="[INSTALLDIR]Drivers\\IrisGTR\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTR\\sys\\irisgtr.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTR\\sys\\irisgtr.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTR\\sys\\irisgtr.sys" />
+         </Component>
+         <Component Name="IrisGTRFirmware" Destination="[INSTALLDIR]Drivers\\IrisGTR\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTR\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="IrisGTX">
+         <Component Name="IrisGTXCfg" Destination="[INSTALLDIR]Drivers\\IrisGTX" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTX\\IrisGTX.cfg" />
+         </Component>
+         <Component Name="IrisGTXDCF" Destination="[INSTALLDIR]Drivers\\IrisGTX\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTX\\dcf" />
+         </Component>
+         <Component Name="IrisGTXDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milIrisGTX.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milIrisGTXUI.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\MILIrisGTXFocusDelay.dll" />
+         </Component>
+
+         <Component Name="IrisGTXSys" Destination="[INSTALLDIR]Drivers\\IrisGTX\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTX\\sys\\IrisGTX.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTX\\sys\\IrisGTX.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTX\\sys\\IrisGTX.sys" />
+         </Component>
+         <Component Name="IrisGTXFirmware" Destination="[INSTALLDIR]Drivers\\IrisGTX\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\IrisGTX\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="Nexis2">
+         <Component Name="Nexis2Cfg" Destination="[INSTALLDIR]Drivers\\Nexis2" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis2\\Nexis2.cfg" />
+         </Component>
+         <Component Name="Nexis2DCF" Destination="[INSTALLDIR]Drivers\\Nexis2\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis2\\dcf" />
+         </Component>
+         <Component Name="Nexis2DLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milNexis2.dll" />
+         </Component>
+
+         <Component Name="Nexis2Sys" Destination="[INSTALLDIR]Drivers\\Nexis2\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis2\\sys\\Nexis2.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis2\\sys\\Nexis2.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis2\\sys\\Nexis2.sys" />
+         </Component>
+         <Component Name="Nexis2Firmware" Destination="[INSTALLDIR]Drivers\\Nexis2\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis2\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="Nexis3">
+         <Component Name="Nexis3Cfg" Destination="[INSTALLDIR]Drivers\\Nexis3" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis3\\Nexis3.cfg" />
+         </Component>
+         <Component Name="Nexis3DCF" Destination="[INSTALLDIR]Drivers\\Nexis3\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis3\\dcf" />
+         </Component>
+         <Component Name="Nexis3DLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milNexis3.dll" />
+         </Component>
+
+         <Component Name="Nexis3Sys" Destination="[INSTALLDIR]Drivers\\Nexis3\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis3\\sys\\Nexis3.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis3\\sys\\Nexis3.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis3\\sys\\Nexis3.sys" />
+         </Component>
+         <Component Name="Nexis3Firmware" Destination="[INSTALLDIR]Drivers\\Nexis3\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Nexis3\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="RadientCXP">
+         <Component Name="RadientCXPComp" Destination="[INSTALLDIR]Drivers\\RadientCXP" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\RadientCXP.cfg" />
+         </Component>
+         <Component Name="RadientCXPDCF" Destination="[INSTALLDIR]Drivers\\RadientCXP\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\dcf" />
+         </Component>
+         <Component Name="RadientCXPDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRadientCXP.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRadientCXPUI.dll" />
+         </Component>
+
+         <Component Name="RadientCXPSys" Destination="[INSTALLDIR]Drivers\\RadientCXP\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\sys\\RadientCXP.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\sys\\RadientCXP.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\sys\\RadientCXP.sys" />
+         </Component>
+         <Component Name="RadientCXPFirmware" Destination="[INSTALLDIR]Drivers\\RadientCXP\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientCXP\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="RadientEVCL">
+         <Component Name="RadientEVCLComp" Destination="[INSTALLDIR]Drivers\\RadientEVCL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEVCL\\RadientEVCL.cfg" />
+         </Component>
+         <Component Name="RadientEVCLDCF" Destination="[INSTALLDIR]Drivers\\RadientEVCL\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEVCL\\dcf" />
+         </Component>
+         <Component Name="RadientEVCLDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRadientEVCL.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRadientEVCLUI.dll" />
+         </Component>
+
+         <Component Name="RadientEVCLSys" Destination="[INSTALLDIR]Drivers\\RadientEVCL\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEVCL\\sys\\RadientEVCL.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEVCL\\sys\\RadientEVCL.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEVCL\\sys\\RadientEVCL.sys" />
+         </Component>
+         <Component Name="RadientEVCLFirmware" Destination="[INSTALLDIR]Drivers\\RadientEVCL\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RadientEVCL\\firmware" />
+         </Component>
+      </Feature>
+
+      <Feature Name="RapixoCL">
+         <Component Name="RapixoCLComp" Destination="[INSTALLDIR]Drivers\\RapixoCL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\RapixoCL.cfg" />
+         </Component>
+         <Component Name="RapixoCLDCF" Destination="[INSTALLDIR]Drivers\\RapixoCL\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\dcf" />
+         </Component>
+         <Component Name="RapixoCLDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRapixoCL.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRapixoCLUI.dll" />
+         </Component>
+
+         <Component Name="RapixoCLSys" Destination="[INSTALLDIR]Drivers\\RapixoCL\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\sys\\RapixoCL.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\sys\\RapixoCL.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\sys\\RapixoCL.sys" />
+         </Component>
+         <Component Name="RapixoCLFirmware" Destination="[INSTALLDIR]Drivers\\RapixoCL\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCL\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="RapixoCXP">
+         <Component Name="RapixoCXPComp" Destination="[INSTALLDIR]Drivers\\RapixoCXP" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\RapixoCXP.cfg" />
+         </Component>
+         <Component Name="RapixoCXPDCF" Destination="[INSTALLDIR]Drivers\\RapixoCXP\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\dcf" />
+         </Component>
+         <Component Name="RapixoCXPDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRapixoCXP.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milRapixoCXPUI.dll" />
+         </Component>
+
+         <Component Name="RapixoCXPSys" Destination="[INSTALLDIR]Drivers\\RapixoCXP\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\sys\\RapixoCXP.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\sys\\RapixoCXP.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\sys\\RapixoCXP.sys" />
+         </Component>
+         <Component Name="RapixoCXPFirmware" Destination="[INSTALLDIR]Drivers\\RapixoCXP\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\RapixoCXP\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="Solios">
+         <Component Name="SoliosComp" Destination="[INSTALLDIR]Drivers\\Solios" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\Solios.cfg" />
+         </Component>
+         <Component Name="SoliosDCF" Destination="[INSTALLDIR]Drivers\\Solios\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\dcf" />
+         </Component>
+         <Component Name="SoliosDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milSolios.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milSoliosUI.dll" />
+         </Component>
+
+         <Component Name="SoliosSys" Destination="[INSTALLDIR]Drivers\\Solios\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\sys\\Solios.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\sys\\Solios.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\sys\\Solios.sys" />
+         </Component>
+         <Component Name="SoliosFirmware" Destination="[INSTALLDIR]Drivers\\Solios\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="SuperSight">
+         <Component Name="SuperSight" Destination="[INSTALLDIR]Drivers\\SuperSight" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\SuperSight" />
+         </Component>
+         <Component Name="SuperSightDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\dll\milpcie.dll" />
+         </Component>
+         <Component Name="SuperSightFirmware" Destination="[INSTALLDIR]Drivers\\SuperSight\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\SuperSight\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="SuperSightUno">
+         <Component Name="SuperSightUnoCFG" Destination="[INSTALLDIR]Drivers\\SuperSightUno" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\SuperSightUno\\SuperSightUno.cfg" />
+         </Component>
+         <Component Name="SuperSightDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\dll\MilAux.dll" />
+         </Component>
+         <Component Name="SuperSightUnoTools" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\ISMMSDK.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\AsrCore.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MtxWatchDogManager.exe" />
+         </Component>
+      </Feature>
+      <Feature Name="ConcordPoE">
+         <Component Name="mtx4SightComp" Destination="[INSTALLDIR]Drivers\\ConcordPoE" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ConcordPoE\\ConcordPoE.cfg" />
+         </Component>
+      </Feature>
+      <Feature Name="ConcordPoE">
+         <Component Name="concordpoeComp" Destination="[INSTALLDIR]Drivers\\ConcordPoE" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ConcordPoE\\ConcordPoE.cfg" />
+         </Component>
+         <Component Name="concordpoeDCF" Destination="[INSTALLDIR]Drivers\\ConcordPoE\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ConcordPoE\\dcf" />
+         </Component>
+         <Component Name="concordpoeDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milConcordPoE.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milConcordPoEUI.dll" />
+         </Component>
+
+         <Component Name="concordpoeSys" Destination="[INSTALLDIR]Drivers\\ConcordPoE\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\sys\\ConcordPoE.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\sys\\ConcordPoE.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Solios\\sys\\ConcordPoE.sys" />
+         </Component>
+         <Component Name="concordpoefirmware" Destination="[INSTALLDIR]Drivers\\ConcordPoE\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\ConcordPoE\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="mtxGigE">
+         <Component Name="mtxgigeComp" Destination="[INSTALLDIR]Drivers\\mtxGigESys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxGigESys\\mtxGigESys.cfg" />
+         </Component>
+         <Component Name="mtxGigEDCF" Destination="[INSTALLDIR]Drivers\\mtxGigESys\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxGigESys\\dcf" />
+         </Component>
+         <Component Name="mtxGigEDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milGigEVision.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milGigEVisionUI.dll" />
+         </Component>
+
+         <Component Name="mtxGigESys" Destination="[INSTALLDIR]Drivers\\mtxgige\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\sys\\mtxgige.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\sys\\mtxgige.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\sys\\mtxgige.sys" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\sys\\ConcordGE60.sys" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\sys\\concordgige.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\sys\\concordgige.inf" />
+         </Component>
+         <Component Name="mtxgigeXML" Destination="[INSTALLDIR]Drivers\\mtxgige\\xml" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgige\\xml" />
+         </Component>
+      </Feature>
+      <Feature Name="usb3vision">
+         <Component Name="usb3visionCfg" Destination="[INSTALLDIR]Drivers\\usb3vision" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\usb3vision\\usb3vision.cfg" />
+         </Component>
+         <Component Name="usb3visionDCF" Destination="[INSTALLDIR]Drivers\\usb3vision\\dcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\usb3vision\\dcf" />
+         </Component>
+         <Component Name="usb3visionDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milusb3vision.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milusb3visionUI.dll" />
+         </Component>
+
+         <Component Name="usb3visionSYS" Destination="[INSTALLDIR]Drivers\\usb3vision\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\usb3vision\\sys\\usb3vision.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\usb3vision\\sys\\usb3vision.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\usb3vision\\sys\\usb3vision.sys" />
+         </Component>
+      </Feature>
+      <Feature Name="GenTLConsumer">
+         <Component Name="GenTLConsumer.cfg" Destination="[INSTALLDIR]Drivers\\GenTLConsumer" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\GenTLConsumer\\GenTLConsumer.cfg" />
+         </Component>
+      </Feature>
+      <Feature Name="Host">
+         <Component Name="HOSTCFG" Destination="[INSTALLDIR]Drivers\\Host" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Host\\Host.cfg" />
+         </Component>
+         <Component Name="HostSDCF" Destination="[INSTALLDIR]Drivers\\Host\\sdcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Host\\sdcf" />
+         </Component>
+         <Component Name="HostVCF" Destination="[INSTALLDIR]Drivers\\Host\\vcf" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\Host\\vcf" />
+         </Component>
+      </Feature>
+      <Feature Name="CameraLink">
+         <Component Name="CamLinkDLLwin32" Destination="[INSTALLDIR]Drivers\\CameraLinkDLL\\win32">
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\CameraLink\\win32" />
+         </Component>
+         <Component Name="CamLinkDLLwin64" Destination="[INSTALLDIR]Drivers\\CameraLinkDLL\\win64">
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\CameraLink\\win64" />
+         </Component>
+      </Feature>
+      <Feature Name="drvmanage">
+         <Component Name="Mtxdrivers" Destination="[INSTALLDIR]Drivers\\Install">
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxservw.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxservw.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxservw.sys" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxmem.sys" />
+         </Component>
+         <Component Name="MtxNonPagedMemoryChecker" Destination="[INSTALLDIR]Drivers\\Install">
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\MtxNonPagedMemoryChecker.exe" />
+         </Component>
+         <Component Name="SIFAndTools" Destination="[INSTALLDIR]Drivers\\Install">
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\DMILClusterManager.sif" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\drvmanage.exe" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\milnetworkserver.sif" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxgigeservice.sif" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxsightmonitor.sif" />
+         </Component>
+      </Feature>
+      <Feature Name="GenICam">
+         <Component Name="FeatureBrowser" Destination="[INSTALLDIR]Tools\FeatureBrowser">
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\FeatureBrowser" />
+         </Component>
+         <Component Name="GenICam" Destination="[INSTALLDIR]Drivers\\GenICam">
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\genicam" />
+         </Component>
+         <Component Name="milwebserver.dll" Destination="[INSTALLDIR]MIL\\DLL">
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milwebserver.dll" />
+         </Component>
+      </Feature>
+      <Feature Name="mtxgigefilter">
+         <Component Name="mtxgigefilterComp" Destination="[INSTALLDIR]Drivers\\mtxgigefilter" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgigefilter\\mtxgigefilte.stp" />
+         </Component>
+         <Component Name="mtxgigefilterSys" Destination="[INSTALLDIR]Drivers\\mtxgigefilter\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgigefilter\\mtxgigefilter62.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgigefilter\\mtxgigefilter62.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxgigefilter\\mtxgigefilter62.sys" />
+         </Component>
+      </Feature>
+      <Feature Name="gigeservice">
+         <Component Name="gigeservice" Destination="[INSTALLDIR]tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MtxGigeService.exe" />
+         </Component>
+      </Feature>
+      <Feature Name="MtxSerialStdw">
+         <Component Name="cfg" Destination="[INSTALLDIR]Drivers\MtxSerialStdw" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxserialstdw\\mtxserialstdw.cfg" />
+         </Component>
+
+         <Component Name="MtxSerialStdw" Destination="[INSTALLDIR]Drivers\\MtxSerialStdw\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxserialstdw\\sys\\mtxserialstdw.sys" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxserialstdw\\sys\\mtxserialstdw.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxserialstdw\\sys\\mtxserialstdw.inf" />
+         </Component>
+      </Feature>
+      <Feature Name="MtxAux">
+         <Component Name="MtxAuxCFG" Destination="[INSTALLDIR]Drivers\\mtxaux" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\mtxaux.cfg" />
+         </Component>
+         <Component Name="MtxAuxDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]MIL\\DLL\\milaux.dll" />
+         </Component>
+
+         <Component Name="MtxAuxSYS" Destination="[INSTALLDIR]Drivers\\mtxaux\\sys" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.cat" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.inf" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\sys\\mtxaux.sys" />
+         </Component>
+         <Component Name="MtxAuxFirmware" Destination="[INSTALLDIR]Drivers\\mtxaux\\firmware" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\boards\\mtxaux\\firmware" />
+         </Component>
+      </Feature>
+      <Feature Name="mtxwatchdogmanager">
+         <Component Name="mtxwatchdogmanage_tool" Destination="[INSTALLDIR]tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\ISMMSDK.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\AsrCore.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MtxWatchDogManager.exe" />
+         </Component>
+         <Component Name="mtxwatchdogmanager.sif" Destination="[INSTALLDIR]Drivers\\Install" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxwatchdogmanager.sif" />
+         </Component>
+      </Feature>
+   </Feature>
+   <Feature Name="BenchAndExampleLauncher">
+      <Feature Name="bchsummary_full">
+         <Component Name="bchsummary_full" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]BchSummary\\bchsummary.bch" />
+         </Component>
+      </Feature>
+      <Feature Name="bchsummary_lite">
+         <Component Name="bchsummary_lite" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]BchSummary\\lite\\bchsummary.bch" />
+         </Component>
+      </Feature>
+      <Component Name="ExampleLauncher" Destination="[INSTALLDIR]Tools" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]tools\\ExampleLauncher.exe" />
+      </Component>
+      <Component Name="MILBench" Destination="[INSTALLDIR]Tools" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]tools\\milbench.exe" />
+      </Component>
+   </Feature>
+   <Feature Name="Images">
+      <Feature Name="ImagesGeneral">
+         <Component Name="ImagesGeneral" Destination="[INSTALLDIR]Images" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]images\\full" />
+         </Component>
+      </Feature>
+      <Feature Name="ImagesFull">
+         <Component Name="ImagesFull" Destination="[INSTALLDIR]Images" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]images\\general" />
+         </Component>
+      </Feature>
+   </Feature>
+   <Feature Name="DEV_Tools">
+      <Feature Name="DEV_Tools_Full">
+         <Component Name="CodeReader.exe" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\CodeReader.exe" />
+         </Component>
+         <Component Name="ColorAnalysis.exe" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\ColorAnalysis.exe" />
+         </Component>
+         <Component Name="EdgeFinder.exe" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\EdgeFinder.exe" />
+         </Component>
+         <Component Name="Metrology.exe" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Metrology.exe" />
+         </Component>
+         <Component Name="OcrReader.exe" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\OcrReader.exe" />
+         </Component>
+         <Component Name="StringReader.exe" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\StringReader.exe" />
+         </Component>
+         <Component Name="ThreeD_Doc" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\3D Setup Helper.xls" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Setting up for laser-based 3D scanning.pdf" />
+         </Component>
+      </Feature>
+      <Feature Name="DEV_Tools_Lite">
+         <Component Name="Matrox.AccessMilHelp.dll" Destination="[INSTALLDIR]Tools\\Profiler" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Profiler\\Matrox.AccessMILHelp.dll" />
+         </Component>
+         <Component Name="Matrox.MilDatagram.dll" Destination="[INSTALLDIR]Tools\\Profiler" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Profiler\\Matrox.MilDatagram.dll" />
+         </Component>
+         <Component Name="Matrox.MilDictionary.dll" Destination="[INSTALLDIR]Tools\\Profiler" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Profiler\\Matrox.MilDictionary.dll" />
+         </Component>
+         <Component Name="Matrox.MilParameterConverter.dll" Destination="[INSTALLDIR]Tools\\Profiler" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Profiler\\Matrox.MilParameterConverter.dll" />
+         </Component>
+         <Component Name="Matrox.MilTraceManager.dll" Destination="[INSTALLDIR]Tools\\Profiler" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Profiler\\Matrox.MilTraceManager.dll" />
+         </Component>
+         <Component Name="Matrox.MilTraceManager.dll" Destination="[INSTALLDIR]Tools\\Profiler" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\Profiler\\Matrox.MilTraceManager.dll" />
+         </Component>
+         <Component Name="MilHelpCommandDispatcher" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\MilHelpCommandDispatcher.exe" />
+         </Component>
+         <Component Name="milthumbnail" Destination="[INSTALLDIR]Tools\\milthumbnail" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\MilThumbnail\\MilThumbnailDLL.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\MilThumbnail\\MilThumbnailUtilities.dll" />
+         </Component>
+         <Component Name="vs_files.txt" Destination="[INSTALLDIR]MIL\\Config\\VS_SUPPORT" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\VS_SUPPORT\\vs_files.txt" />
+         </Component>
+         <Component Name="vs_files2017.txt" Destination="[INSTALLDIR]MIL\\Config\\VS_SUPPORT2017" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\VS_SUPPORT2017\\vs_files.txt" />
+         </Component>
+         <Component Name="vs_files2019.txt" Destination="[INSTALLDIR]MIL\\Config\\VS_SUPPORT2019" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\VS_SUPPORT2019\\vs_files.txt" />
+         </Component>
+         <Component Name="vs_files2022.txt" Destination="[INSTALLDIR]MIL\\Config\\VS_SUPPORT2022" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\VS_SUPPORT2019\\vs_files.txt" />
+         </Component>
+         <Component Name="VS_Support" Destination="[INSTALLDIR]Tools\\VS_SUPPORT" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\vs_support" />
+         </Component>
+         <Component Name="VS_Support2017" Destination="[INSTALLDIR]Tools\\VS_SUPPORT" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\vs_support" />
+         </Component>
+         <Component Name="VS_Support2019" Destination="[INSTALLDIR]Tools\\VS_SUPPORT" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\vs_support" />
+         </Component>
+         <Component Name="VS_Support2022" Destination="[INSTALLDIR]Tools\\VS_SUPPORT" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\vs_support" />
+         </Component>
+         <Component Name="vswhere.exe" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]tools\\vswhere.exe" />
+         </Component>
+      </Feature>
+   </Feature>
+   <Feature Name="DirectX">
+   </Feature>
+   <Feature Name="doNetFx">
+      <Component Name="dotNetFx" Destination="[INSTALLDIR]Tools\\Install\\dotNetFX" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]dotNetFX\\dotNetFx480_Client_x86_x64.exe" />
+         <File Source="[PATH_TO_CDBUILDER_FILES]dotNetFX\\windowsdesktop-runtime-6.0.4-win-x64.exe" />
+      </Component>
+   </Feature>
+   <Feature Name="DEV_CommonFiles">
+   </Feature>
+   <Feature Name="MILCOM">
+      <Feature Name="COMComponents">
+         <Component Name="CCLinkConfig" Destination="[INSTALLDIR]MIL\\Config\\CCLink" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\Cclink" />
+         </Component>
+         <Component Name="EthernetIPConfig" Destination="[INSTALLDIR]MIL\\Config\\EthernetIPConfig" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\EthernetIPConfig" />
+         </Component>
+         <Component Name="CCLinkConfig" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\McomController.dll" />
+         </Component>
+         <Component Name="milcom.dll" Destination="[INSTALLDIR]MIL\\DLL" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\dll\\milcom.dll" />
+         </Component>
+         <Component Name="mtxprotocolmanager.sif" Destination="[INSTALLDIR]Drivers\\Install" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]drivers\\install\\mtxprotocolmanager.sif" />
+         </Component>
+         <Component Name="MtxProtocolManagerAndDLL.exe" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\MtxProtocol.exe" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\MtxProtocolManager.exe" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\ModbusProtocol.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\EIPProtocol.dll" />
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\CclinkProtocol.dll" />
+         </Component>
+         <Component Name="ProfinetConfig" Destination="[INSTALLDIR]MIL\\Config\\Profinet" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\Profinet" />
+         </Component>
+         <Component Name="ProfinetProtocol.dll" Destination="[INSTALLDIR]Tools" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]Tools\\ProfinetProtocol.dll" />
+         </Component>
+         <Component Name="RobotsConfig" Destination="[INSTALLDIR]MIL\\Config\\Robots" >
+            <File Source="[PATH_TO_CDBUILDER_FILES]mil\\Config\\Robots" />
+         </Component>
+      </Feature>
+   </Feature>
+   <Feature Name="milcopilot">
+      <Component Name="milcopilot" Destination="[INSTALLDIR]MIL Copilot" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]MIL CoPilot" />
+      </Component>
+   </Feature>
+   <Feature Name="capturework">
+      <Component Name="CaptureWorks" Destination="[INSTALLDIR]Tools" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]tools\\CaptureWorks.exe" />
+         <File Source="[PATH_TO_CDBUILDER_FILES]tools\\MatroxCaptureWorks.pdf" />
+      </Component>
+   </Feature>
+   <Feature Name="Intellicam">
+      <Component Name="IntellicamDLL" Destination="[INSTALLDIR]MIL\\DLL" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]Intellicam\\common\\DigitizerController.dll" />
+      </Component>
+      <Component Name="IntellicamDoc" Destination="[INSTALLDIR]Intellicam" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]Intellicam\\help" />
+      </Component>
+      <Component Name="IntellicamEXEC" Destination="[INSTALLDIR]Intellicam" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]Intellicam\\exec\\Intellicam.exe" />
+      </Component>
+      <Component Name="IntellicamSpec" Destination="[INSTALLDIR]Intellicam" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]Intellicam\\specific" />
+      </Component>
+   </Feature>
+   <Feature Name="LicenseServer">
+   </Feature>
+   <Feature Name="profiler">
+      <Component Name="Profiler.exe" Destination="[INSTALLDIR]Tools" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]tools\\profiler.exe" />
+         <File Source="[PATH_TO_CDBUILDER_FILES]tools\\profiler.exe.config" />
+      </Component>
+      <Component Name="ProfilerWrapper" Destination="[INSTALLDIR]Tools" >
+         <File Source="[PATH_TO_CDBUILDER_FILES]tools\\profiler" />
+      </Component>
+   </Feature>
+   <Feature Name="AppsUtil">
+   </Feature>
+   <Feature Name="Classification">
+      <Feature Name="TrainingCPU">
+         <Component Name="PredictCPU" Destination="[INSTALLDIR]Tools" >
+         </Component>
       </Feature>
    </Feature>
 </InstallTree>

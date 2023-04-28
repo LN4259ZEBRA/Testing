@@ -1,0 +1,47 @@
+﻿<InstallTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Installer.xsd">
+      
+   <Feature Name="Test">
+      <!--                  SUCCESS CASE                 -->
+      <!--Many files cases-->
+      <File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
+      <File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
+      <File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
+      
+      <!--Many components case with one element-->
+      <Component Name="MilDEV_contexts" Destination="[INSTALLDIR]Contexts">
+         <File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
+      </Component>
+      <Component Name="MilDEV_contexts" Destination="[INSTALLDIR]Contexts">
+         <File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
+      </Component>
+      <Component Name="MilDEV_contexts" Destination="[INSTALLDIR]Contexts">
+         <File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
+      </Component>
+
+      <!--Feature within feature with one component-->
+      <Feature Name="Test2">
+         <Component Name="MilDEV_contexts" Destination="[INSTALLDIR]Contexts">
+            <File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
+         </Component>
+      </Feature>
+      
+      <!--                  FAIL CASE                 -->
+      <!--Cluster of feature and many components within second layer of featurecomponent -->
+      <Feature Name="Test3">
+         <Feature Name="Test4">
+         </Feature>
+         <Feature Name="Test5">
+         </Feature>
+         <Feature Name="Test6">
+         </Feature>
+         <Component Name="MilDEV_contexts" Destination="[INSTALLDIR]Contexts">
+            <File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
+         </Component>
+         <Component Name="MilDEV_contexts" Destination="[INSTALLDIR]Contexts">
+            <File Source="[PATH_TO_CDBUILDER_FILES]contexts" />
+         </Component>
+      </Feature>    
+      
+   </Feature>
+
+</InstallTree>
